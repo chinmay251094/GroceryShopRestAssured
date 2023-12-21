@@ -4,7 +4,6 @@ import com.grocery.annotations.GroceryShopTeam;
 import com.grocery.enums.TestCategory;
 import com.grocery.enums.Tester;
 import com.grocery.utils.Utilities;
-import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.assertj.core.api.Assertions;
@@ -15,30 +14,21 @@ import java.util.Map;
 import static com.grocery.builder.RequestBuilder.initiateRequest;
 import static com.grocery.reports.GroceryShopReportLogger.logRequestParams;
 import static com.grocery.reports.GroceryShopReportLogger.logResponse;
-import static com.grocery.utils.ApiUtils.getInstance;
 import static com.grocery.utils.Utilities.writeDataToJsonFile;
-import static io.restassured.RestAssured.given;
 
-public class CartTests {
-    private final String baseUrl = getInstance().getDataSupplier().getBaseUrl();
-    private final String cartId = Utilities.getInstance().getCartSupplier().getCartId();
-
+public final class CartTests {
     @Test
     void testGetNewCart() {
-        final Response response = given()
-                .header("Content-Type", ContentType.JSON)
-                .baseUri(baseUrl)
-                .log().all()
-                .get("/carts/:cartId");
+        RequestSpecification requestSpecification = initiateRequest().buildRequestForGetCalls();
+        Response response = requestSpecification.get("/carts/:cartId");
+
+        logResponse(response);
     }
 
     @Test
     void testCreateNewCart() {
-        final Response response = given()
-                .header("Content-Type", ContentType.JSON)
-                .baseUri(baseUrl)
-                .log().all()
-                .post("/carts");
+        RequestSpecification requestSpecification = initiateRequest().buildRequestForPostCalls();
+        Response response = requestSpecification.post("/carts");
 
         if (response.getStatusCode() == 201) {
             Map<String, ?> responseData = response.as(Map.class);
@@ -51,6 +41,8 @@ public class CartTests {
         } else {
             System.err.println("Failed to retrieve data. Status code: " + response.getStatusCode());
         }
+
+        logResponse(response);
     }
 
     @Test
