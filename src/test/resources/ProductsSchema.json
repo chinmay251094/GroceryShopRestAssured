@@ -1,0 +1,235 @@
+{
+  "type": "array",
+  "items": [
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "category": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "inStock": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "category",
+        "name",
+        "inStock"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "category": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "inStock": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "category",
+        "name",
+        "inStock"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "category": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "inStock": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "category",
+        "name",
+        "inStock"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "category": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "inStock": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "category",
+        "name",
+        "inStock"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "category": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "inStock": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "category",
+        "name",
+        "inStock"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "category": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "inStock": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "category",
+        "name",
+        "inStock"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "category": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "inStock": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "category",
+        "name",
+        "inStock"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "category": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "inStock": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "category",
+        "name",
+        "inStock"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "category": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "inStock": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "category",
+        "name",
+        "inStock"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "category": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "inStock": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "category",
+        "name",
+        "inStock"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+/target/*
+/test-output/*
+/target/
+/.idea/*
+/downloads/*
+.gitignore/
+.settings
+.project
+.classpath
+README.md
+logs/
+extent-test-output/

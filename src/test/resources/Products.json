@@ -1,0 +1,26 @@
+[ {
+  "id" : 4643,
+  "category" : "coffee",
+  "name" : "Starbucks Coffee Variety Pack, 100% Arabica",
+  "inStock" : true
+}, {
+  "id" : 4646,
+  "category" : "coffee",
+  "name" : "Ethical Bean Medium Dark Roast, Espresso",
+  "inStock" : true
+}, {
+  "id" : 4641,
+  "category" : "coffee",
+  "name" : "Don Francisco Colombia Supremo Medium Roast",
+  "inStock" : true
+}, {
+  "id" : 1225,
+  "category" : "fresh-produce",
+  "name" : "1/2 in. Brushless Hammer Drill",
+  "inStock" : true
+}, {
+  "id" : 3674,
+  "category" : "fresh-produce",
+  "name" : "20V Max Cordless Drill Combo Kit",
+  "inStock" : true
+} ]

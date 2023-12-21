@@ -1,0 +1,58 @@
+[
+  {
+    "Test Name": "testGetSpecificProduct",
+    "Test Description": "To check whether the user is able to fetch a specific product",
+    "Execute": "yes",
+    "Count": 1,
+    "Priority": 1,
+    "Id": 1
+  },
+  {
+    "Test Name": "testGetAllProductsForCategory",
+    "Test Description": "To check whether the user is able to fetch all products for a specific category",
+    "Execute": "yes",
+    "Count": 1,
+    "Priority": 1,
+    "Id": 2
+  },
+  {
+    "Test Name": "testGetAllProducts",
+    "Test Description": "To check whether the user is able to fetch all products",
+    "Execute": "yes",
+    "Count": 1,
+    "Priority": 1,
+    "Id": 3
+  },
+  {
+    "Test Name": "testGetSpecificNumberOfProducts",
+    "Test Description": "To check whether the user is able to fetch specific number of products",
+    "Execute": "yes",
+    "Count": 1,
+    "Priority": 1,
+    "Id": 4
+  },
+  {
+    "Test Name": "testAddItemsToCart",
+    "Test Description": "To check whether the user is able to add an item to cart",
+    "Execute": "yes",
+    "Count": 1,
+    "Priority": 1,
+    "Id": 5
+  },
+  {
+    "Test Name": "testGetItemsInCart",
+    "Test Description": "To check whether the user is able to fetch existing items in cart",
+    "Execute": "yes",
+    "Count": 1,
+    "Priority": 1,
+    "Id": 6
+  },
+  {
+    "Test Name": "testDeleteItemsFromCart",
+    "Test Description": "To check whether the user is able to delete an item present in cart",
+    "Execute": "yes",
+    "Count": 1,
+    "Priority": 1,
+    "Id": 7
+  }
+]

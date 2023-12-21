@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="GroceryShop-Suite">
+    <listeners>
+        <listener class-name="com.grocery.listeners.TestListener"/>
+        <listener class-name="com.grocery.listeners.MethodInterceptor"/>
+        <listener class-name="com.grocery.listeners.AnnotationTransformer"/>
+    </listeners>
+    <test parallel="methods" thread-count="10" name="Smoke-Sanity-Regression">
+        <classes>
+            <class name="com.grocery.tests.ProductsTest"/>
+            <class name="com.grocery.tests.CartTests"/>
+        </classes>
+    </test>
+</suite>

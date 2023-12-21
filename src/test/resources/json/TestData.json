@@ -1,0 +1,45 @@
+[
+  {
+    "Test Name": "testGetSpecificProduct",
+    "Test Description": "To check whether the user is able to fetch a specific product",
+    "Execute": "yes",
+    "Product Id": 8739
+  },
+  {
+    "Test Name": "testGetAllProductsForCategory",
+    "Test Description": "To check whether the user is able to fetch all products for a specific category",
+    "Execute": "yes",
+    "Product Category": "fresh-produce"
+  },
+  {
+    "Test Name": "testGetAllProducts",
+    "Test Description": "To check whether the user is able to fetch all products",
+    "Execute": "yes",
+    "Product Category": "fresh-produce"
+  },
+  {
+    "Test Name": "testGetSpecificNumberOfProducts",
+    "Test Description": "To check whether the user is able to fetch specific number of products",
+    "Execute": "yes",
+    "Results": 5
+  },
+  {
+    "Test Name": "testAddItemsToCart",
+    "Test Description": "To check whether the user is able to add an item to cart",
+    "Execute": "yes",
+    "Cart Id": "tgY8xQoPywwtGKtH8WpYz"
+  },
+  {
+    "Test Name": "testGetItemsInCart",
+    "Test Description": "To check whether the user is able to fetch existing items in cart",
+    "Execute": "yes",
+    "Cart Id": "tgY8xQoPywwtGKtH8WpYz"
+  },
+  {
+    "Test Name": "testDeleteItemsFromCart",
+    "Test Description": "To check whether the user is able to delete an item present in cart",
+    "Execute": "yes",
+    "Cart Id": "tgY8xQoPywwtGKtH8WpYz",
+    "Item Id": "580536434"
+  }
+]
