@@ -54,5 +54,29 @@
     "Count": 1,
     "Priority": 1,
     "Id": 7
+  },
+  {
+    "Test Name": "testGenerateAccessToken",
+    "Test Description": "To check whether the user is able to generate an access token",
+    "Execute": "yes",
+    "Count": 1,
+    "Priority": 1,
+    "Id": 8
+  },
+  {
+    "Test Name": "testCreateNewOrder",
+    "Test Description": "To check whether the user is able to create a new order using token access",
+    "Execute": "yes",
+    "Count": 1,
+    "Priority": 1,
+    "Id": 9
+  },
+  {
+    "Test Name": "testCreateNewCart",
+    "Test Description": "To check whether the user is able to create a new cart",
+    "Execute": "yes",
+    "Count": 1,
+    "Priority": 1,
+    "Id": 10
   }
 ]

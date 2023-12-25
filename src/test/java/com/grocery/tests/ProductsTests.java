@@ -1,6 +1,7 @@
 package com.grocery.tests;
 
 import com.grocery.annotations.GroceryShopTeam;
+import com.grocery.constants.FrameworkConstants;
 import com.grocery.enums.TestCategory;
 import com.grocery.enums.Tester;
 import com.grocery.pojo.ProductIdentifier;
@@ -20,8 +21,8 @@ import static com.grocery.reports.GroceryShopReportLogger.logResponse;
 import static com.grocery.utils.Utilities.*;
 import static com.grocery.utils.VerificationUtils.runAndVerifyMandatoryPass;
 
-public final class ProductsTest {
-    private ProductsTest() {
+public final class ProductsTests {
+    private ProductsTests() {
         super();
     }
 
@@ -89,7 +90,7 @@ public final class ProductsTest {
         logResponse(response);
 
         runAndVerifyMandatoryPass(() -> {
-            response.then().body(JsonSchemaValidator.matchesJsonSchemaInClasspath("ProductsSchema.json"));
+            response.then().body(JsonSchemaValidator.matchesJsonSchemaInClasspath("files/ProductsSchema.json"));
         }, "Schema does not match.");
 
         Assertions.assertThat(response.getStatusCode()).isEqualTo(200);
@@ -99,9 +100,9 @@ public final class ProductsTest {
     @GroceryShopTeam(author = Tester.CHINMAY, category = TestCategory.SANITY)
     @Test
     void testAddItemsToCart(Map<String, String> map) {
-        List<ProductIdentifier> productIdentifiers = readJsonData("src/test/resources/ItemsForCart.json", ProductIdentifier.class);
+        List<ProductIdentifier> productIdentifiers = readJsonData(FrameworkConstants.getRESOURCEPATH() + "/files/ItemsForCart.json", ProductIdentifier.class);
         ProductIdentifier productIdentifier = productIdentifiers.get(0);
-        
+
         RequestSpecification requestSpecification = initiateRequest()
                 .buildRequestForPostCalls()
                 .pathParam("cartId", map.get("Cart Id"));
@@ -109,7 +110,7 @@ public final class ProductsTest {
         Response response = requestSpecification.body(productIdentifier)
                 .post("/carts/{cartId}/items");
 
-        storeResponseToJsonFile(response);
+        storeResponseToJsonFile(response, FrameworkConstants.getRESOURCEPATH() + "/files/ResponseData.json");
 
         logRequestInformation(requestSpecification);
     }

@@ -3,12 +3,13 @@ package com.grocery.constants;
 import com.grocery.enums.ConfigProperties;
 import com.grocery.utils.DateTimeUtils;
 import com.grocery.utils.PropertyUtils;
+import lombok.Getter;
 
 public final class FrameworkConstants {
+    @Getter
     private static final String RESOURCEPATH = System.getProperty("user.dir") + "/src/test/resources/";
     private static final String DATAJSONSPATH = RESOURCEPATH + "/json/";
     private static final String CONFIGPATH = RESOURCEPATH + "/config/config.properties";
-    //private static final String EXTENTREPORTSPATH = System.getProperty("user.dir") + "/extent-test-output/index.html";
     private static final String EXTENTREPORTSPATH = System.getProperty("user.dir") + "/extent-test-output/";
     private static String extentReportFilepath = "";
 

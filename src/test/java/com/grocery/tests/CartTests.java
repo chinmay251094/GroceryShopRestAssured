@@ -1,6 +1,7 @@
 package com.grocery.tests;
 
 import com.grocery.annotations.GroceryShopTeam;
+import com.grocery.constants.FrameworkConstants;
 import com.grocery.enums.TestCategory;
 import com.grocery.enums.Tester;
 import com.grocery.utils.Utilities;
@@ -17,7 +18,11 @@ import static com.grocery.reports.GroceryShopReportLogger.logResponse;
 import static com.grocery.utils.Utilities.writeDataToJsonFile;
 
 public final class CartTests {
+    private CartTests() {
+    }
+
     @Test
+    @GroceryShopTeam(author = Tester.CHINMAY, category = {TestCategory.REGRESSION, TestCategory.SANITY})
     void testGetNewCart() {
         RequestSpecification requestSpecification = initiateRequest().buildRequestForGetCalls();
         Response response = requestSpecification.get("/carts/:cartId");
@@ -26,14 +31,15 @@ public final class CartTests {
     }
 
     @Test
-    void testCreateNewCart() {
+    @GroceryShopTeam(author = Tester.CHINMAY, category = {TestCategory.REGRESSION, TestCategory.SANITY})
+    void testCreateNewCart(Map<String, String> map) {
         RequestSpecification requestSpecification = initiateRequest().buildRequestForPostCalls();
         Response response = requestSpecification.post("/carts");
 
         if (response.getStatusCode() == 201) {
             Map<String, ?> responseData = response.as(Map.class);
 
-            String filePath = "src/test/resources/CartIdentifier.json";
+            String filePath = FrameworkConstants.getRESOURCEPATH() + "/CartIdentifier.json";
 
             writeDataToJsonFile(responseData, filePath);
 
@@ -56,7 +62,7 @@ public final class CartTests {
     @Test
     @GroceryShopTeam(author = Tester.CHINMAY, category = TestCategory.SANITY)
     void testModifyItemsInCart(Map<String, String> map) {
-        String requestBody = Utilities.readFileContent("src/test/resources/CartModifier.json");
+        String requestBody = Utilities.readFileContent(FrameworkConstants.getRESOURCEPATH() + "/files/CartModifier.json");
 
         Response patched = initiateRequest().buildRequestForPatchCalls()
                 .pathParam("cartId", map.get("Cart Id"))

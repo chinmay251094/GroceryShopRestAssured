@@ -3,6 +3,7 @@ package com.grocery.utils;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
+import com.grocery.exceptions.GroceryShopException;
 import com.grocery.pojo.CartIdentifier;
 import com.grocery.pojo.Products;
 import com.grocery.supplier.DataReader;
@@ -16,6 +17,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Base64;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -60,9 +62,9 @@ public class Utilities {
         }
     }
 
-    public static void storeResponseToJsonFile(Response response) {
+    public static void storeResponseToJsonFile(Response response, String filePath) {
         try {
-            Files.write(Paths.get("src/test/resources/ResponseData.json"), response.asByteArray());
+            Files.write(Paths.get(filePath), response.asByteArray());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -83,7 +85,7 @@ public class Utilities {
         return products.get(random.nextInt(products.size()));
     }
 
-    public static List<Map<String, Object>> readProductsFromJson(String filePath) {
+    public static List<Map<String, Object>> readContentFromJson(String filePath) {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
             return objectMapper.readValue(new File(filePath), new TypeReference<>() {
@@ -111,7 +113,7 @@ public class Utilities {
             return objectMapper.readValue(new File(filePath), targetType);
         } catch (IOException e) {
             e.printStackTrace();
-            throw new RuntimeException("Error reading JSON file: " + e.getMessage());
+            throw new GroceryShopException("Error reading JSON file: " + e.getMessage());
         }
     }
 
@@ -119,6 +121,17 @@ public class Utilities {
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             return objectMapper.readValue(new File(filePath), objectMapper.getTypeFactory().constructCollectionType(List.class, targetType));
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new RuntimeException("Error reading JSON file: " + e.getMessage());
+        }
+    }
+
+    public static String readJsonFileAsString(String filePath) {
+        try {
+            // Read the content of the file into a string
+            byte[] jsonData = Files.readAllBytes(Paths.get(filePath));
+            return new String(jsonData);
         } catch (IOException e) {
             e.printStackTrace();
             throw new RuntimeException("Error reading JSON file: " + e.getMessage());
@@ -157,5 +170,13 @@ public class Utilities {
         } catch (IOException e) {
             throw new RuntimeException("Error reading file: " + filePath, e);
         }
+    }
+
+    public static String encodeTextToBase64(String text) {
+        // Encode the text to Base64
+        byte[] encodedBytes = Base64.getEncoder().encode(text.getBytes());
+
+        // Convert the byte array to a string
+        return new String(encodedBytes);
     }
 }

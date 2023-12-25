@@ -8,8 +8,10 @@
     </listeners>
     <test parallel="methods" thread-count="10" name="Smoke-Sanity-Regression">
         <classes>
-            <class name="com.grocery.tests.ProductsTest"/>
+            <class name="com.grocery.tests.ProductsTests"/>
             <class name="com.grocery.tests.CartTests"/>
+            <class name="com.grocery.tests.AuthenticationTests"/>
+            <class name="com.grocery.tests.OrdersTests"/>
         </classes>
     </test>
 </suite>

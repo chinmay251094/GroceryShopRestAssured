@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 import static com.grocery.utils.ApiUtils.getInstance;
 import static io.restassured.RestAssured.given;
 
-public class CheckStatusTest {
+public class CheckStatusTests {
 
     private final String baseUrl = getInstance().getDataSupplier().getBaseUrl();
 

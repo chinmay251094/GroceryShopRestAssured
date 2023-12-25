@@ -5,6 +5,7 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.CodeLanguage;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
+import com.grocery.utils.Utilities;
 import io.restassured.http.Header;
 import io.restassured.response.Response;
 import io.restassured.specification.QueryableRequestSpecification;
@@ -54,10 +55,10 @@ public final class GroceryShopReportLogger {
             if (requestBody instanceof byte[]) {
                 byte[] requestBodyBytes = (byte[]) requestBody;
                 String requestBodyString = new String(requestBodyBytes);
-                getExtent().info(MarkupHelper.createCodeBlock(requestBodyString, CodeLanguage.JSON));
+                getExtent().info("<b>" + MarkupHelper.createCodeBlock(requestBodyString, CodeLanguage.JSON) + "</b>");
             } else if (requestBody instanceof String) {
                 String requestBodyString = (String) requestBody;
-                getExtent().info(MarkupHelper.createCodeBlock(requestBodyString, CodeLanguage.JSON));
+                getExtent().info("<b>" + MarkupHelper.createCodeBlock(requestBodyString, CodeLanguage.JSON) + "</b>");
             } else {
                 getExtent().info("Request Body is of unexpected type: " + requestBody.getClass());
             }
@@ -77,7 +78,7 @@ public final class GroceryShopReportLogger {
         if (pathParams != null && !pathParams.isEmpty()) {
             getExtent().info("Path Parameters used are stated below:");
             for (Map.Entry<String, String> entry : pathParams.entrySet()) {
-                getExtent().info(entry.getKey() + " " + "<b>" + entry.getValue() + "</b>");
+                getExtent().info(entry.getKey() + " " + "<b>" + Utilities.encodeTextToBase64(entry.getValue()) + "</b>");
             }
         } else {
             getExtent().info("No Path Parameters.");
