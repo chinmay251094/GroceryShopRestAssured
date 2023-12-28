@@ -2,6 +2,8 @@ package com.grocery.builder;
 
 import com.grocery.enums.ConfigKey;
 import com.grocery.utils.PropertyUtils;
+import io.restassured.config.LogConfig;
+import io.restassured.config.RestAssuredConfig;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import lombok.Getter;
@@ -28,6 +30,16 @@ public final class RequestBuilder {
     public RequestSpecification buildRequestForPostCalls() {
         return buildRequestForGetCalls().header(CONTENT_TYPE, ContentType.JSON);
     }
+
+    public RequestSpecification buildRequestForPostCallsWithAuthorization() {
+        return given().
+                baseUri(baseUrl).
+                header(CONTENT_TYPE, ContentType.JSON).
+                config(RestAssuredConfig.config().
+                        logConfig(LogConfig.logConfig().
+                                blacklistHeader("Authorization"))).log().all();
+    }
+
 
     public RequestSpecification buildRequestForPutCalls() {
         return buildRequestForGetCalls().header(CONTENT_TYPE, ContentType.JSON);

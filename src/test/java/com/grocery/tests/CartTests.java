@@ -39,7 +39,7 @@ public final class CartTests {
         if (response.getStatusCode() == 201) {
             Map<String, ?> responseData = response.as(Map.class);
 
-            String filePath = FrameworkConstants.getRESOURCEPATH() + "/CartIdentifier.json";
+            String filePath = FrameworkConstants.getRESOURCEPATH() + "/files/CartIdentifier.json";
 
             writeDataToJsonFile(responseData, filePath);
 

@@ -12,14 +12,16 @@ import lombok.SneakyThrows;
 import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
 import static com.grocery.builder.RequestBuilder.initiateRequest;
-import static com.grocery.reports.GroceryShopReportLogger.*;
+import static com.grocery.reports.GroceryShopReportLogger.logRequestInformation;
+import static com.grocery.reports.GroceryShopReportLogger.logResponse;
 import static com.grocery.utils.Utilities.*;
 import static com.grocery.utils.VerificationUtils.runAndVerifyMandatoryPass;
-import static org.hamcrest.Matchers.hasItems;
+import static org.hamcrest.Matchers.*;
 
 public final class ProductsTests {
     private ProductsTests() {
@@ -49,39 +51,68 @@ public final class ProductsTests {
 
         List<String> categories = extractAttributeFromJson(response, "category");
 
+        response.then().assertThat().body("category", hasItems("fresh-produce"));
+
         Assertions.assertThat(categories)
                 .as("All categories should be 'fresh-produce'")
                 .allMatch(category -> category.equals(productCategory));
     }
 
-    @GroceryShopTeam(author = Tester.CHINMAY, category = TestCategory.SANITY)
     @Test
-    void testGetAllProductsForCategoryStock(Map<String, String> map) {
-//        given().baseUri("https://simple-grocery-store-api.glitch.me").
-//
-//                when().queryParam("category", map.get("Product Category")).get("/products").
-//
-//                then().log().all().assertThat().statusCode(200).body("category", hasItems("fresh-produce"), "inStock", hasItems(true));
-
-        RequestSpecification requestSpecification = initiateRequest().buildRequestForGetCalls();
-
-        Response response = requestSpecification.when().
+    @GroceryShopTeam(author = Tester.CHINMAY, category = TestCategory.SANITY)
+    void testGetAllProductsForCategoryOutOfStock(Map<String, String> map) {
+        Response response = initiateRequest().buildRequestForGetCalls().when().
                 queryParam("available", map.get("Availability")).
-                queryParam("category", map.get("Product Category")).get("/products");
+                queryParam("category", map.get("Product Category")).
+                get("/products");
+
+        response.then().log().body().
+                assertThat().
+                statusCode(200).
+                body("category", hasItems("fresh-produce"),
+                        "inStock", hasItems(false),
+                        "name[0]", is(equalTo("Cucumber Organic")),
+                        "category", everyItem(startsWith("fresh")),
+                        "[0]", hasKey("id"),
+                        "[0]", hasKey("category"),
+                        "[0]", hasKey("name"),
+                        "[0]", hasKey("inStock"),
+                        "[0]", hasValue(false),
+                        "[0]", hasValue("fresh-produce"),
+                        "[0]", hasEntry("category", "fresh-produce"),
+                        "[0]", not(emptyArray()),
+                        "[0]", not(equalTo(Collections.EMPTY_MAP)),
+                        "category", everyItem(containsString("produce"))
+                );
+
+        logResponse(response);
+    }
+
+    @Test
+    @GroceryShopTeam(author = Tester.CHINMAY, category = TestCategory.SANITY)
+    void testGetAllProductsForCategoryInStock(Map<String, String> map) {
+        Response response = initiateRequest().buildRequestForGetCalls().when().
+                queryParam("available", map.get("Availability")).
+                queryParam("category", map.get("Product Category")).
+                get("/products");
+
+        Object name = response.path("name[0]");
+        System.out.println("-----Fetching first object's value-----");
+        System.out.println("name = " + name);
 
         response.then().log().all().
                 assertThat().statusCode(200).
-                body("category", hasItems("fresh-produce"), "inStock", hasItems(false));
-
-        logRequestParams(requestSpecification);
+                body("category", hasItems("fresh-produce"),
+                        "inStock", hasItems(true),
+                        "category", everyItem(startsWith("fresh"))
+                );
         logResponse(response);
     }
 
     @Test
     @GroceryShopTeam(author = Tester.CHINMAY, category = TestCategory.SANITY)
     void testGetSpecificProduct(Map<String, String> map) {
-        RequestSpecification requestSpecification = initiateRequest().buildRequestForGetCalls();
-        Response response = requestSpecification.pathParam("productId", map.get("Product Id"))
+        Response response = initiateRequest().buildRequestForGetCalls().pathParam("productId", map.get("Product Id"))
                 .log().all()
                 .get("/products/{productId}");
 
@@ -101,7 +132,7 @@ public final class ProductsTests {
         if (response.getStatusCode() == 200) {
             List<Map<String, Object>> responseData = deserializeResponse(response.getBody().asString());
 
-            String filePath = "src/test/resources/Products.json";
+            String filePath = "src/test/resources/files/Products.json";
 
             writeDataToJsonFile(responseData, filePath);
 
@@ -113,22 +144,24 @@ public final class ProductsTests {
         logResponse(response);
 
         runAndVerifyMandatoryPass(() -> {
-            response.then().body(JsonSchemaValidator.matchesJsonSchemaInClasspath("files/ProductsSchema.json"));
+            response.then().body(JsonSchemaValidator.matchesJsonSchemaInClasspath(FrameworkConstants.getRESOURCEPATH() + "/files/ProductsSchema.json"));
         }, "Schema does not match.");
 
         Assertions.assertThat(response.getStatusCode()).isEqualTo(200);
     }
 
     @SneakyThrows
-    @GroceryShopTeam(author = Tester.CHINMAY, category = TestCategory.SANITY)
     @Test
+    @GroceryShopTeam(author = Tester.CHINMAY, category = TestCategory.SANITY)
     void testAddItemsToCart(Map<String, String> map) {
-        List<ProductIdentifier> productIdentifiers = readJsonData(FrameworkConstants.getRESOURCEPATH() + "/files/ItemsForCart.json", ProductIdentifier.class);
+        List<ProductIdentifier> productIdentifiers = readJsonData(FrameworkConstants.getRESOURCEPATH() + "/files/ItemsForCart.json",
+                ProductIdentifier.class);
+        
         ProductIdentifier productIdentifier = productIdentifiers.get(0);
 
-        RequestSpecification requestSpecification = initiateRequest()
-                .buildRequestForPostCalls()
-                .pathParam("cartId", map.get("Cart Id"));
+        RequestSpecification requestSpecification = initiateRequest().
+                buildRequestForPostCalls().
+                pathParam("cartId", map.get("Cart Id"));
 
         Response response = requestSpecification.body(productIdentifier)
                 .post("/carts/{cartId}/items");

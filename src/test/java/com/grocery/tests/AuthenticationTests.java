@@ -30,7 +30,8 @@ public final class AuthenticationTests {
 
         if (response.getStatusCode() == 201) {
             // Extract access token directly from the response
-            String accessToken = response.jsonPath().getString("accessToken");
+            //String accessToken = response.jsonPath().getString("accessToken");
+            String accessToken = response.path("accessToken");
 
             // Save access token to properties file
             Utilities.saveDataToProperties("bearertoken", accessToken, FrameworkConstants.getRESOURCEPATH() + "/config/token.properties");

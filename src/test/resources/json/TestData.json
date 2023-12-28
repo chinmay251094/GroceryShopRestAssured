@@ -50,7 +50,7 @@
   {
     "Test Name": "testCreateNewOrder",
     "Test Description": "To check whether the user is able to create a new order using token access",
-    "Execute": "no",
+    "Execute": "yes",
     "Token": "Bearer 193ecbdb6742ff18df786117bdc58c21dfa1a5bab796b9267a69c114ed4a97de"
   },
   {
@@ -59,10 +59,17 @@
     "Execute": "no"
   },
   {
-    "Test Name": "testGetAllProductsForCategoryStock",
-    "Test Description": "To check whether the user is able to fetch products of specific category which are in stock",
-    "Execute": "yes",
+    "Test Name": "testGetAllProductsForCategoryOutOfStock",
+    "Test Description": "To check whether the user is able to fetch products of specific category which are not in stock",
+    "Execute": "no",
     "Product Category": "fresh-produce",
     "Availability": false
+  },
+  {
+    "Test Name": "testGetAllProductsForCategoryInStock",
+    "Test Description": "To check whether the user is able to fetch products of specific category which are in stock",
+    "Execute": "no",
+    "Product Category": "fresh-produce",
+    "Availability": true
   }
 ]
