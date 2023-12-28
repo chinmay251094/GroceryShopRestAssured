@@ -24,7 +24,7 @@ public final class OrdersTests {
     void testCreateNewOrder(Map<String, String> map) {
         String orderData = Utilities.readJsonFileAsString(FrameworkConstants.getRESOURCEPATH() + "/files/OrderCreator.json");
 
-        RequestSpecification requestSpecification = initiateRequest().buildRequestForPostCalls().headers("Authorization", map.get("Token"));
+        RequestSpecification requestSpecification = initiateRequest().buildRequestForPostCalls().header("Authorization", map.get("Token"));
         Response response = requestSpecification.body(orderData).post("/orders");
 
         GroceryShopReportLogger.logRequestInformation(requestSpecification);

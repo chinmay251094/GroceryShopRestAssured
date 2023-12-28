@@ -1,6 +1,6 @@
 package com.grocery.constants;
 
-import com.grocery.enums.ConfigProperties;
+import com.grocery.enums.ConfigKey;
 import com.grocery.utils.DateTimeUtils;
 import com.grocery.utils.PropertyUtils;
 import lombok.Getter;
@@ -32,7 +32,7 @@ public final class FrameworkConstants {
     }
 
     public static String createReportPath() {
-        if (PropertyUtils.get(ConfigProperties.OVERRIDEREPORTS).equalsIgnoreCase("no")) {
+        if (PropertyUtils.get(ConfigKey.OVERRIDEREPORTS).equalsIgnoreCase("no")) {
             return EXTENTREPORTSPATH + "/" + "GroceryShop_Ver1.0_" + DateTimeUtils.getDateTime() + ".html";
         } else {
             return EXTENTREPORTSPATH + "/" + "index.html";

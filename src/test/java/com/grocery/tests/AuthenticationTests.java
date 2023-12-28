@@ -15,7 +15,6 @@ import java.util.Map;
 import static com.grocery.builder.RequestBuilder.initiateRequest;
 import static com.grocery.reports.GroceryShopReportLogger.logRequestInformation;
 import static com.grocery.reports.GroceryShopReportLogger.logResponse;
-import static com.grocery.utils.Utilities.storeResponseToJsonFile;
 
 public final class AuthenticationTests {
     private AuthenticationTests() {
@@ -30,7 +29,11 @@ public final class AuthenticationTests {
         Response response = requestSpecification.body(data).post("/api-clients");
 
         if (response.getStatusCode() == 201) {
-            storeResponseToJsonFile(response, "src/test/resources/AccessToken.json");
+            // Extract access token directly from the response
+            String accessToken = response.jsonPath().getString("accessToken");
+
+            // Save access token to properties file
+            Utilities.saveDataToProperties("bearertoken", accessToken, FrameworkConstants.getRESOURCEPATH() + "/config/token.properties");
         } else {
             Assert.fail("Invalid request");
         }

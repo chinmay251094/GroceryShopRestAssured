@@ -55,10 +55,10 @@ public final class GroceryShopReportLogger {
             if (requestBody instanceof byte[]) {
                 byte[] requestBodyBytes = (byte[]) requestBody;
                 String requestBodyString = new String(requestBodyBytes);
-                getExtent().info("<b>" + MarkupHelper.createCodeBlock(requestBodyString, CodeLanguage.JSON) + "</b>");
+                getExtent().info(MarkupHelper.createCodeBlock(requestBodyString, CodeLanguage.JSON));
             } else if (requestBody instanceof String) {
                 String requestBodyString = (String) requestBody;
-                getExtent().info("<b>" + MarkupHelper.createCodeBlock(requestBodyString, CodeLanguage.JSON) + "</b>");
+                getExtent().info(MarkupHelper.createCodeBlock(requestBodyString, CodeLanguage.JSON));
             } else {
                 getExtent().info("Request Body is of unexpected type: " + requestBody.getClass());
             }

@@ -16,10 +16,10 @@ import java.util.List;
 import java.util.Map;
 
 import static com.grocery.builder.RequestBuilder.initiateRequest;
-import static com.grocery.reports.GroceryShopReportLogger.logRequestInformation;
-import static com.grocery.reports.GroceryShopReportLogger.logResponse;
+import static com.grocery.reports.GroceryShopReportLogger.*;
 import static com.grocery.utils.Utilities.*;
 import static com.grocery.utils.VerificationUtils.runAndVerifyMandatoryPass;
+import static org.hamcrest.Matchers.hasItems;
 
 public final class ProductsTests {
     private ProductsTests() {
@@ -32,8 +32,6 @@ public final class ProductsTests {
         RequestSpecification requestSpecification = initiateRequest().buildRequestForGetCalls().pathParam("products", "products");
 
         Response response = requestSpecification.get("/{products}");
-
-        logResponse(response);
 
         Assertions.assertThat(response.statusCode()).isEqualTo(200);
     }
@@ -58,11 +56,36 @@ public final class ProductsTests {
 
     @GroceryShopTeam(author = Tester.CHINMAY, category = TestCategory.SANITY)
     @Test
+    void testGetAllProductsForCategoryStock(Map<String, String> map) {
+//        given().baseUri("https://simple-grocery-store-api.glitch.me").
+//
+//                when().queryParam("category", map.get("Product Category")).get("/products").
+//
+//                then().log().all().assertThat().statusCode(200).body("category", hasItems("fresh-produce"), "inStock", hasItems(true));
+
+        RequestSpecification requestSpecification = initiateRequest().buildRequestForGetCalls();
+
+        Response response = requestSpecification.when().
+                queryParam("available", map.get("Availability")).
+                queryParam("category", map.get("Product Category")).get("/products");
+
+        response.then().log().all().
+                assertThat().statusCode(200).
+                body("category", hasItems("fresh-produce"), "inStock", hasItems(false));
+
+        logRequestParams(requestSpecification);
+        logResponse(response);
+    }
+
+    @Test
+    @GroceryShopTeam(author = Tester.CHINMAY, category = TestCategory.SANITY)
     void testGetSpecificProduct(Map<String, String> map) {
-        final Response response = initiateRequest().buildRequestForGetCalls()
-                .pathParam("productId", map.get("Product Id"))
+        RequestSpecification requestSpecification = initiateRequest().buildRequestForGetCalls();
+        Response response = requestSpecification.pathParam("productId", map.get("Product Id"))
                 .log().all()
                 .get("/products/{productId}");
+
+        response.then().assertThat().statusCode(200);
 
         logResponse(response);
     }

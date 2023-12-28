@@ -4,7 +4,7 @@ package com.grocery.utils;
 import com.github.javafaker.Faker;
 import com.google.common.util.concurrent.Uninterruptibles;
 import com.grocery.constants.FrameworkConstants;
-import com.grocery.enums.ConfigProperties;
+import com.grocery.enums.ConfigKey;
 import lombok.SneakyThrows;
 import org.apache.commons.mail.DefaultAuthenticator;
 import org.apache.commons.mail.EmailAttachment;
@@ -79,15 +79,15 @@ public final class UtilityService {
 
         try {
             MultiPartEmail email = new MultiPartEmail();
-            email.setHostName(PropertyUtils.get(ConfigProperties.HOSTNAME));
-            email.setAuthenticator(new DefaultAuthenticator(PropertyUtils.get(ConfigProperties.MAILAUTHENTICATOR),
-                    PropertyUtils.get(ConfigProperties.MAILPASSWORD)));
+            email.setHostName(PropertyUtils.get(ConfigKey.HOSTNAME));
+            email.setAuthenticator(new DefaultAuthenticator(PropertyUtils.get(ConfigKey.MAILAUTHENTICATOR),
+                    PropertyUtils.get(ConfigKey.MAILPASSWORD)));
             email.setSSLOnConnect(true);
             email.setSmtpPort(587);
-            email.addTo(PropertyUtils.get(ConfigProperties.MANAGER), PropertyUtils.get(ConfigProperties.MANAGERNAME));
-            email.setFrom(PropertyUtils.get(ConfigProperties.SETFROMMAIL), PropertyUtils.get(ConfigProperties.SETFROMNAME));
-            email.setSubject(PropertyUtils.get(ConfigProperties.MAILSUBJECT));
-            email.setMsg(PropertyUtils.get(ConfigProperties.MAILBODY));
+            email.addTo(PropertyUtils.get(ConfigKey.MANAGER), PropertyUtils.get(ConfigKey.MANAGERNAME));
+            email.setFrom(PropertyUtils.get(ConfigKey.SETFROMMAIL), PropertyUtils.get(ConfigKey.SETFROMNAME));
+            email.setSubject(PropertyUtils.get(ConfigKey.MAILSUBJECT));
+            email.setMsg(PropertyUtils.get(ConfigKey.MAILBODY));
 
             // add the attachment
             email.attach(attachment);
@@ -134,7 +134,7 @@ public final class UtilityService {
             Session session = Session.getDefaultInstance(props, null);
             session.setDebug(true);
             Store store = session.getStore("imap");
-            store.connect(PropertyUtils.get(ConfigProperties.HOSTNAME), 993, PropertyUtils.get(ConfigProperties.MANAGER), "MyPassword");
+            store.connect(PropertyUtils.get(ConfigKey.HOSTNAME), 993, PropertyUtils.get(ConfigKey.MANAGER), "MyPassword");
 
             Folder folder = store.getFolder("INBOX");
             folder.open(Folder.READ_WRITE);

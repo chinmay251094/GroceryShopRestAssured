@@ -1,22 +1,20 @@
 package com.grocery.builder;
 
-import com.grocery.supplier.ConfigurationPOJO;
-import com.grocery.utils.CommonUtils;
-import io.github.sskorol.data.JsonReader;
+import com.grocery.enums.ConfigKey;
+import com.grocery.utils.PropertyUtils;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import lombok.Getter;
-import one.util.streamex.StreamEx;
 
-import static io.github.sskorol.data.TestDataReader.use;
 import static io.restassured.RestAssured.given;
 
-public final class RequestBuilder implements CommonUtils {
+public final class RequestBuilder {
+    private static final String CONTENT_TYPE = "Content-Type";
     @Getter
     private final String baseUrl;
 
     private RequestBuilder() {
-        this.baseUrl = getData().findFirst().map(ConfigurationPOJO::getBaseUrl).orElse(null);
+        this.baseUrl = PropertyUtils.get(ConfigKey.BASEURL);
     }
 
     public static RequestBuilder initiateRequest() {
@@ -28,26 +26,18 @@ public final class RequestBuilder implements CommonUtils {
     }
 
     public RequestSpecification buildRequestForPostCalls() {
-        return buildRequestForGetCalls().header("Content-Type", ContentType.JSON);
+        return buildRequestForGetCalls().header(CONTENT_TYPE, ContentType.JSON);
     }
 
     public RequestSpecification buildRequestForPutCalls() {
-        return buildRequestForGetCalls().header("Content-Type", ContentType.JSON);
+        return buildRequestForGetCalls().header(CONTENT_TYPE, ContentType.JSON);
     }
 
     public RequestSpecification buildRequestForPatchCalls() {
-        return buildRequestForGetCalls().header("Content-Type", ContentType.JSON);
+        return buildRequestForGetCalls().header(CONTENT_TYPE, ContentType.JSON);
     }
 
     public RequestSpecification buildRequestForDeleteCalls() {
-        return buildRequestForGetCalls().header("Content-Type", ContentType.JSON);
-    }
-
-    @Override
-    public StreamEx<ConfigurationPOJO> getData() {
-        return use(JsonReader.class)
-                .withTarget(ConfigurationPOJO.class)
-                .withSource("TestConfiguration.json")
-                .read();
+        return buildRequestForGetCalls().header(CONTENT_TYPE, ContentType.JSON);
     }
 }

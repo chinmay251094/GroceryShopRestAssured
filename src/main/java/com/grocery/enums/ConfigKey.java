@@ -1,6 +1,7 @@
 package com.grocery.enums;
 
-public enum ConfigProperties {
+public enum ConfigKey {
+    BASEURL,
     OVERRIDEREPORTS,
     RETRYFAILEDTEST,
     HOSTNAME,

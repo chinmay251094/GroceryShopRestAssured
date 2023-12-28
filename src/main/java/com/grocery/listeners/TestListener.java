@@ -1,7 +1,7 @@
 package com.grocery.listeners;
 
 import com.grocery.annotations.GroceryShopTeam;
-import com.grocery.enums.ConfigProperties;
+import com.grocery.enums.ConfigKey;
 import com.grocery.exceptions.GroceryShopException;
 import com.grocery.exceptions.GroceryShopTestSkipException;
 import com.grocery.reports.GroceryShopReports;
@@ -29,7 +29,7 @@ public final class TestListener implements ITestListener, ISuiteListener {
     public void onFinish(ISuite suite) {
         try {
             flushReports();
-            if (PropertyUtils.get(ConfigProperties.SEND_REPORTS_MAIL).equalsIgnoreCase("yes")) {
+            if (PropertyUtils.get(ConfigKey.SEND_REPORTS_MAIL).equalsIgnoreCase("yes")) {
                 sendEmailWithAttachment();
             }
         } catch (Exception e) {

@@ -3,7 +3,7 @@
     "Test Name": "testGetSpecificProduct",
     "Test Description": "To check whether the user is able to fetch a specific product",
     "Execute": "no",
-    "Product Id": 8739
+    "Product Id": 4641
   },
   {
     "Test Name": "testGetAllProductsForCategory",
@@ -50,12 +50,19 @@
   {
     "Test Name": "testCreateNewOrder",
     "Test Description": "To check whether the user is able to create a new order using token access",
-    "Execute": "yes",
-    "Token": "193ecbdb6742ff18df786117bdc58c21dfa1a5bab796b9267a69c114ed4a97de"
+    "Execute": "no",
+    "Token": "Bearer 193ecbdb6742ff18df786117bdc58c21dfa1a5bab796b9267a69c114ed4a97de"
   },
   {
     "Test Name": "testCreateNewCart",
     "Test Description": "To check whether the user is able to create a new cart",
     "Execute": "no"
+  },
+  {
+    "Test Name": "testGetAllProductsForCategoryStock",
+    "Test Description": "To check whether the user is able to fetch products of specific category which are in stock",
+    "Execute": "yes",
+    "Product Category": "fresh-produce",
+    "Availability": false
   }
 ]

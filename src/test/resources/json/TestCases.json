@@ -78,5 +78,13 @@
     "Count": 1,
     "Priority": 1,
     "Id": 10
+  },
+  {
+    "Test Name": "testGetAllProductsForCategoryStock",
+    "Test Description": "To check whether the user is able to fetch products of specific category which are in stock",
+    "Execute": "yes",
+    "Count": 1,
+    "Priority": 1,
+    "Id": 11
   }
 ]

@@ -13,14 +13,12 @@ import lombok.Getter;
 import one.util.streamex.StreamEx;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Base64;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
 
 public class Utilities {
     private final StreamEx<CartIdentifier> cartReader = DataReader.getCartIdentifier();
@@ -168,7 +166,7 @@ public class Utilities {
         try {
             return new String(Files.readAllBytes(Paths.get(filePath)));
         } catch (IOException e) {
-            throw new RuntimeException("Error reading file: " + filePath, e);
+            throw new GroceryShopException("Error reading file: " + filePath, e);
         }
     }
 
@@ -178,5 +176,21 @@ public class Utilities {
 
         // Convert the byte array to a string
         return new String(encodedBytes);
+    }
+
+    protected static void savePropertiesToFile(Properties properties, String filePath) {
+        try (FileOutputStream fos = new FileOutputStream(filePath)) {
+            properties.store(fos, "Response Properties");
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new GroceryShopException("Error saving properties to file: " + e.getMessage());
+        }
+    }
+
+    public static void saveDataToProperties(String key, String value, String propertiesFilePath) {
+        Properties properties = new Properties();
+        properties.setProperty(key, value);
+
+        savePropertiesToFile(properties, propertiesFilePath);
     }
 }
