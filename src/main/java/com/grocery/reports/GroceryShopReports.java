@@ -3,9 +3,9 @@ package com.grocery.reports;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
-import com.grocery.builder.RequestBuilder;
 import com.grocery.enums.TestCategory;
 import com.grocery.enums.Tester;
+import com.grocery.utils.EnvironmentUtils;
 
 import java.awt.*;
 import java.io.File;
@@ -66,6 +66,6 @@ public final class GroceryShopReports {
     }
 
     public static void setUrlInfo() {
-        GroceryShopReportManager.getExtent().info("<font color='yellow'><b>" + "\uD83C\uDF10 " + RequestBuilder.initiateRequest().getBaseUrl() + "</b></font>");
+        GroceryShopReportManager.getExtent().info("<font color='yellow'><b>" + "\uD83C\uDF10 " + EnvironmentUtils.getBaseUri() + "</b></font>");
     }
 }

@@ -24,7 +24,7 @@ public final class RequestBuilder {
     }
 
     public RequestSpecification buildRequestForGetCalls() {
-        return given().baseUri(baseUrl).log().all();
+        return given().header(CONTENT_TYPE, ContentType.JSON).log().all();
     }
 
     public RequestSpecification buildRequestForPostCalls() {
@@ -33,8 +33,6 @@ public final class RequestBuilder {
 
     public RequestSpecification buildRequestForPostCallsWithAuthorization() {
         return given().
-                baseUri(baseUrl).
-                header(CONTENT_TYPE, ContentType.JSON).
                 config(RestAssuredConfig.config().
                         logConfig(LogConfig.logConfig().
                                 blacklistHeader("Authorization"))).log().all();

@@ -1,41 +1,48 @@
 [
   {
+    "BaseUri": "https://simple-grocery-store-api.glitch.me",
     "Test Name": "testGetSpecificProduct",
     "Test Description": "To check whether the user is able to fetch a specific product",
     "Execute": "no",
     "Product Id": 4641
   },
   {
+    "BaseUri": "https://simple-grocery-store-api.glitch.me",
     "Test Name": "testGetAllProductsForCategory",
     "Test Description": "To check whether the user is able to fetch all products for a specific category",
     "Execute": "no",
     "Product Category": "fresh-produce"
   },
   {
+    "BaseUri": "https://simple-grocery-store-api.glitch.me",
     "Test Name": "testGetAllProducts",
     "Test Description": "To check whether the user is able to fetch all products",
     "Execute": "no",
     "Product Category": "fresh-produce"
   },
   {
+    "BaseUri": "https://simple-grocery-store-api.glitch.me",
     "Test Name": "testGetSpecificNumberOfProducts",
     "Test Description": "To check whether the user is able to fetch specific number of products",
     "Execute": "no",
     "Results": 5
   },
   {
+    "BaseUri": "https://simple-grocery-store-api.glitch.me",
     "Test Name": "testAddItemsToCart",
     "Test Description": "To check whether the user is able to add an item to cart",
     "Execute": "no",
     "Cart Id": "tgY8xQoPywwtGKtH8WpYz"
   },
   {
+    "BaseUri": "https://simple-grocery-store-api.glitch.me",
     "Test Name": "testGetItemsInCart",
     "Test Description": "To check whether the user is able to fetch existing items in cart",
     "Execute": "no",
     "Cart Id": "tgY8xQoPywwtGKtH8WpYz"
   },
   {
+    "BaseUri": "https://simple-grocery-store-api.glitch.me",
     "Test Name": "testDeleteItemsFromCart",
     "Test Description": "To check whether the user is able to delete an item present in cart",
     "Execute": "no",
@@ -43,29 +50,34 @@
     "Item Id": "228648149"
   },
   {
+    "BaseUri": "https://simple-grocery-store-api.glitch.me",
     "Test Name": "testGenerateAccessToken",
     "Test Description": "To check whether the user is able to generate an access token",
     "Execute": "no"
   },
   {
+    "BaseUri": "https://simple-grocery-store-api.glitch.me",
     "Test Name": "testCreateNewOrder",
     "Test Description": "To check whether the user is able to create a new order using token access",
-    "Execute": "yes",
+    "Execute": "no",
     "Token": "Bearer 193ecbdb6742ff18df786117bdc58c21dfa1a5bab796b9267a69c114ed4a97de"
   },
   {
+    "BaseUri": "https://simple-grocery-store-api.glitch.me",
     "Test Name": "testCreateNewCart",
     "Test Description": "To check whether the user is able to create a new cart",
     "Execute": "no"
   },
   {
+    "BaseUri": "https://simple-grocery-store-api.glitch.me",
     "Test Name": "testGetAllProductsForCategoryOutOfStock",
     "Test Description": "To check whether the user is able to fetch products of specific category which are not in stock",
-    "Execute": "no",
+    "Execute": "yes",
     "Product Category": "fresh-produce",
     "Availability": false
   },
   {
+    "BaseUri": "https://simple-grocery-store-api.glitch.me",
     "Test Name": "testGetAllProductsForCategoryInStock",
     "Test Description": "To check whether the user is able to fetch products of specific category which are in stock",
     "Execute": "no",

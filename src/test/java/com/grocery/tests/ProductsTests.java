@@ -1,10 +1,12 @@
 package com.grocery.tests;
 
 import com.grocery.annotations.GroceryShopTeam;
+import com.grocery.base.BaseTest;
 import com.grocery.constants.FrameworkConstants;
 import com.grocery.enums.TestCategory;
 import com.grocery.enums.Tester;
 import com.grocery.pojo.ProductIdentifier;
+import io.restassured.http.Headers;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
@@ -16,43 +18,58 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-import static com.grocery.builder.RequestBuilder.initiateRequest;
 import static com.grocery.reports.GroceryShopReportLogger.logRequestInformation;
 import static com.grocery.reports.GroceryShopReportLogger.logResponse;
 import static com.grocery.utils.Utilities.*;
 import static com.grocery.utils.VerificationUtils.runAndVerifyMandatoryPass;
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
-public final class ProductsTests {
+public final class ProductsTests extends BaseTest {
     private ProductsTests() {
         super();
     }
 
-    @GroceryShopTeam(author = Tester.CHINMAY, category = TestCategory.SANITY)
     @Test
+    @GroceryShopTeam(author = Tester.CHINMAY, category = TestCategory.SMOKE)
     void testGetAllProducts(Map<String, String> map) {
-        RequestSpecification requestSpecification = initiateRequest().buildRequestForGetCalls().pathParam("products", "products");
+        Response response = given().log().all().
+                pathParam("products", "products").
+                get("/{products}").
+                then().log().all().
+                extract().
+                response();
 
-        Response response = requestSpecification.get("/{products}");
+        logResponse(response);
 
         Assertions.assertThat(response.statusCode()).isEqualTo(200);
     }
 
-    @GroceryShopTeam(author = Tester.CHINMAY, category = TestCategory.SANITY)
     @Test
+    @GroceryShopTeam(author = Tester.CHINMAY, category = TestCategory.SANITY)
     void testGetAllProductsForCategory(Map<String, String> map) {
         String productCategory = map.get("Product Category");
-        Response response = initiateRequest().buildRequestForGetCalls()
+        Response response = given().log().all()
                 .queryParam("category", productCategory)
-                .log().all()
                 .get("/products");
 
         logResponse(response);
 
+        // Define the expected headers
+        List<String> expectedHeaderNames = List.of("Content-Type", "Content-Length");
+
+        // Fetch the headers from the endpoint under test
+        Headers extractedHeaders = response.then().extract().headers();
+
+        // Verify if the expected headers are present in the actual set
+        for (String expectedHeaderName : expectedHeaderNames) {
+            assertThat(extractedHeaders.hasHeaderWithName(expectedHeaderName), is(true));
+        }
+
+        // Your existing test assertions
         List<String> categories = extractAttributeFromJson(response, "category");
-
         response.then().assertThat().body("category", hasItems("fresh-produce"));
-
         Assertions.assertThat(categories)
                 .as("All categories should be 'fresh-produce'")
                 .allMatch(category -> category.equals(productCategory));
@@ -61,7 +78,7 @@ public final class ProductsTests {
     @Test
     @GroceryShopTeam(author = Tester.CHINMAY, category = TestCategory.SANITY)
     void testGetAllProductsForCategoryOutOfStock(Map<String, String> map) {
-        Response response = initiateRequest().buildRequestForGetCalls().when().
+        Response response = given().
                 queryParam("available", map.get("Availability")).
                 queryParam("category", map.get("Product Category")).
                 get("/products");
@@ -91,7 +108,7 @@ public final class ProductsTests {
     @Test
     @GroceryShopTeam(author = Tester.CHINMAY, category = TestCategory.SANITY)
     void testGetAllProductsForCategoryInStock(Map<String, String> map) {
-        Response response = initiateRequest().buildRequestForGetCalls().when().
+        Response response = given().
                 queryParam("available", map.get("Availability")).
                 queryParam("category", map.get("Product Category")).
                 get("/products");
@@ -112,7 +129,7 @@ public final class ProductsTests {
     @Test
     @GroceryShopTeam(author = Tester.CHINMAY, category = TestCategory.SANITY)
     void testGetSpecificProduct(Map<String, String> map) {
-        Response response = initiateRequest().buildRequestForGetCalls().pathParam("productId", map.get("Product Id"))
+        Response response = given().pathParam("productId", map.get("Product Id"))
                 .log().all()
                 .get("/products/{productId}");
 
@@ -124,8 +141,7 @@ public final class ProductsTests {
     @GroceryShopTeam(author = Tester.CHINMAY, category = TestCategory.SANITY)
     @Test
     void testGetSpecificNumberOfProducts(Map<String, String> map) {
-        final Response response = initiateRequest()
-                .buildRequestForGetCalls()
+        final Response response = given()
                 .queryParam("results", map.get("Results"))
                 .get("/products");
 
@@ -156,12 +172,10 @@ public final class ProductsTests {
     void testAddItemsToCart(Map<String, String> map) {
         List<ProductIdentifier> productIdentifiers = readJsonData(FrameworkConstants.getRESOURCEPATH() + "/files/ItemsForCart.json",
                 ProductIdentifier.class);
-        
+
         ProductIdentifier productIdentifier = productIdentifiers.get(0);
 
-        RequestSpecification requestSpecification = initiateRequest().
-                buildRequestForPostCalls().
-                pathParam("cartId", map.get("Cart Id"));
+        RequestSpecification requestSpecification = given().pathParam("cartId", map.get("Cart Id"));
 
         Response response = requestSpecification.body(productIdentifier)
                 .post("/carts/{cartId}/items");
