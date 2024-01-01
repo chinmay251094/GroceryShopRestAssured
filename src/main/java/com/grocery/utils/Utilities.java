@@ -187,7 +187,7 @@ public class Utilities {
         }
     }
 
-    public static void saveDataToProperties(String key, String value, String propertiesFilePath) {
+    public static void saveResponseToProperties(String key, String value, String propertiesFilePath) {
         Properties properties = new Properties();
         properties.setProperty(key, value);
 

@@ -18,7 +18,8 @@
     "Test Name": "testGetAllProducts",
     "Test Description": "To check whether the user is able to fetch all products",
     "Execute": "no",
-    "Product Category": "fresh-produce"
+    "Product Category": "fresh-produce",
+    "Expected Status Code": "200"
   },
   {
     "BaseUri": "https://simple-grocery-store-api.glitch.me",
@@ -32,14 +33,17 @@
     "Test Name": "testAddItemsToCart",
     "Test Description": "To check whether the user is able to add an item to cart",
     "Execute": "no",
-    "Cart Id": "tgY8xQoPywwtGKtH8WpYz"
+    "Cart Id": "Y3OIBjFQ9G3WuAMNOdfWm",
+    "Cart Item": 8739,
+    "Expected Status Code": "201"
   },
   {
     "BaseUri": "https://simple-grocery-store-api.glitch.me",
     "Test Name": "testGetItemsInCart",
     "Test Description": "To check whether the user is able to fetch existing items in cart",
     "Execute": "no",
-    "Cart Id": "tgY8xQoPywwtGKtH8WpYz"
+    "Cart Id": "Y3OIBjFQ9G3WuAMNOdfWm",
+    "Expected Status Code": "200"
   },
   {
     "BaseUri": "https://simple-grocery-store-api.glitch.me",
@@ -53,7 +57,8 @@
     "BaseUri": "https://simple-grocery-store-api.glitch.me",
     "Test Name": "testGenerateAccessToken",
     "Test Description": "To check whether the user is able to generate an access token",
-    "Execute": "no"
+    "Execute": "no",
+    "Expected Status Code": "201"
   },
   {
     "BaseUri": "https://simple-grocery-store-api.glitch.me",
@@ -66,13 +71,14 @@
     "BaseUri": "https://simple-grocery-store-api.glitch.me",
     "Test Name": "testCreateNewCart",
     "Test Description": "To check whether the user is able to create a new cart",
-    "Execute": "no"
+    "Execute": "no",
+    "Expected Status Code": "201"
   },
   {
     "BaseUri": "https://simple-grocery-store-api.glitch.me",
     "Test Name": "testGetAllProductsForCategoryOutOfStock",
     "Test Description": "To check whether the user is able to fetch products of specific category which are not in stock",
-    "Execute": "yes",
+    "Execute": "no",
     "Product Category": "fresh-produce",
     "Availability": false
   },
@@ -83,5 +89,14 @@
     "Execute": "no",
     "Product Category": "fresh-produce",
     "Availability": true
+  },
+  {
+    "BaseUri": "https://simple-grocery-store-api.glitch.me",
+    "Test Name": "testModifyItemsInCart",
+    "Test Description": "To check whether the user is able to modify items present in the cart",
+    "Execute": "yes",
+    "Cart Id": "Y3OIBjFQ9G3WuAMNOdfWm",
+    "Item Id": "699279432",
+    "Expected Status Code": "204"
   }
 ]

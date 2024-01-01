@@ -5,6 +5,7 @@
         <listener class-name="com.grocery.listeners.TestListener"/>
         <listener class-name="com.grocery.listeners.MethodInterceptor"/>
         <listener class-name="com.grocery.listeners.AnnotationTransformer"/>
+        <listener class-name="com.grocery.base.BaseTestEnforcer"/>
     </listeners>
     <test parallel="methods" thread-count="10" name="Smoke-Sanity-Regression">
         <classes>

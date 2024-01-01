@@ -5,16 +5,16 @@ import com.grocery.base.BaseTest;
 import com.grocery.constants.FrameworkConstants;
 import com.grocery.enums.TestCategory;
 import com.grocery.enums.Tester;
-import com.grocery.pojo.ProductIdentifier;
 import io.restassured.http.Headers;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-import lombok.SneakyThrows;
 import org.assertj.core.api.Assertions;
+import org.json.JSONObject;
 import org.testng.annotations.Test;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -42,8 +42,6 @@ public final class ProductsTests extends BaseTest {
                 response();
 
         logResponse(response);
-
-        Assertions.assertThat(response.statusCode()).isEqualTo(200);
     }
 
     @Test
@@ -166,19 +164,20 @@ public final class ProductsTests extends BaseTest {
         Assertions.assertThat(response.getStatusCode()).isEqualTo(200);
     }
 
-    @SneakyThrows
     @Test
     @GroceryShopTeam(author = Tester.CHINMAY, category = TestCategory.SANITY)
     void testAddItemsToCart(Map<String, String> map) {
-        List<ProductIdentifier> productIdentifiers = readJsonData(FrameworkConstants.getRESOURCEPATH() + "/files/ItemsForCart.json",
-                ProductIdentifier.class);
-
-        ProductIdentifier productIdentifier = productIdentifiers.get(0);
+        Map<String, Object> product = new HashMap<>();
+        product.put("productId", map.get("Cart Item"));
+        product.put("quantity", 3);
 
         RequestSpecification requestSpecification = given().pathParam("cartId", map.get("Cart Id"));
 
-        Response response = requestSpecification.body(productIdentifier)
-                .post("/carts/{cartId}/items");
+        Response response = requestSpecification.
+                body(new JSONObject(product).toString()).
+                post("/carts/{cartId}/items");
+
+        response.then().log().all();
 
         storeResponseToJsonFile(response, FrameworkConstants.getRESOURCEPATH() + "/files/ResponseData.json");
 

@@ -94,5 +94,13 @@
     "Count": 1,
     "Priority": 1,
     "Id": 12
+  },
+  {
+    "Test Name": "testModifyItemsInCart",
+    "Test Description": "To check whether the user is able to modify items present in the cart",
+    "Execute": "yes",
+    "Count": 1,
+    "Priority": 1,
+    "Id": 13
   }
 ]

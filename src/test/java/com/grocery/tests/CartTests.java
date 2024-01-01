@@ -1,31 +1,33 @@
 package com.grocery.tests;
 
 import com.grocery.annotations.GroceryShopTeam;
+import com.grocery.base.BaseTest;
 import com.grocery.constants.FrameworkConstants;
 import com.grocery.enums.TestCategory;
 import com.grocery.enums.Tester;
-import com.grocery.utils.Utilities;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.assertj.core.api.Assertions;
+import org.json.JSONObject;
 import org.testng.annotations.Test;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import static com.grocery.builder.RequestBuilder.initiateRequest;
 import static com.grocery.reports.GroceryShopReportLogger.logRequestParams;
 import static com.grocery.reports.GroceryShopReportLogger.logResponse;
 import static com.grocery.utils.Utilities.writeDataToJsonFile;
+import static io.restassured.RestAssured.given;
 
-public final class CartTests {
+public final class CartTests extends BaseTest {
     private CartTests() {
     }
 
     @Test
     @GroceryShopTeam(author = Tester.CHINMAY, category = {TestCategory.REGRESSION, TestCategory.SANITY})
     void testGetNewCart() {
-        RequestSpecification requestSpecification = initiateRequest().buildRequestForGetCalls();
-        Response response = requestSpecification.get("/carts/:cartId");
+        Response response = given().get("/carts/:cartId");
 
         logResponse(response);
     }
@@ -33,10 +35,11 @@ public final class CartTests {
     @Test
     @GroceryShopTeam(author = Tester.CHINMAY, category = {TestCategory.REGRESSION, TestCategory.SANITY})
     void testCreateNewCart(Map<String, String> map) {
-        RequestSpecification requestSpecification = initiateRequest().buildRequestForPostCalls();
-        Response response = requestSpecification.post("/carts");
+        Response response = given().post("/carts");
 
         if (response.getStatusCode() == 201) {
+            response.then().log().all();
+
             Map<String, ?> responseData = response.as(Map.class);
 
             String filePath = FrameworkConstants.getRESOURCEPATH() + "/files/CartIdentifier.json";
@@ -54,7 +57,9 @@ public final class CartTests {
     @Test
     @GroceryShopTeam(author = Tester.CHINMAY, category = {TestCategory.SMOKE, TestCategory.REGRESSION})
     void testGetItemsInCart(Map<String, String> map) {
-        Response response = initiateRequest().buildRequestForGetCalls().get("/carts/" + map.get("Cart Id") + "/items");
+        Response response = given().
+                pathParam("cartId", map.get("Cart Id")).
+                get("/carts/{cartId}/items");
 
         logResponse(response);
     }
@@ -62,17 +67,14 @@ public final class CartTests {
     @Test
     @GroceryShopTeam(author = Tester.CHINMAY, category = TestCategory.SANITY)
     void testModifyItemsInCart(Map<String, String> map) {
-        String requestBody = Utilities.readFileContent(FrameworkConstants.getRESOURCEPATH() + "/files/CartModifier.json");
+        Map<String, Object> product = new HashMap<>();
+        product.put("quantity", 3);
 
-        Response patched = initiateRequest().buildRequestForPatchCalls()
-                .pathParam("cartId", map.get("Cart Id"))
-                .pathParam("itemId", 694265213)
-                .body(requestBody)
-                .patch("/carts/{cartId}/items/{itemId}");
-
-        patched.prettyPrint();
-
-        Assertions.assertThat(patched.getStatusCode()).isEqualTo(204);
+        given().
+                pathParam("cartId", map.get("Cart Id")).
+                pathParam("itemId", map.get("Item Id")).
+                body(new JSONObject(product).toString()).
+                patch("/carts/{cartId}/items/{itemId}");
     }
 
     @Test
