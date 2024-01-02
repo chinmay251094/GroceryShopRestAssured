@@ -10,7 +10,6 @@ import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.assertj.core.api.Assertions;
-import org.json.JSONObject;
 import org.testng.annotations.Test;
 
 import java.util.Collections;
@@ -106,9 +105,12 @@ public final class ProductsTests extends BaseTest {
     @Test
     @GroceryShopTeam(author = Tester.CHINMAY, category = TestCategory.SANITY)
     void testGetAllProductsForCategoryInStock(Map<String, String> map) {
+        HashMap<String, String> queryParameters = new HashMap<>();
+        queryParameters.put("available", map.get("Availability"));
+        queryParameters.put("category", map.get("Product Category"));
+
         Response response = given().
-                queryParam("available", map.get("Availability")).
-                queryParam("category", map.get("Product Category")).
+                queryParams(queryParameters).
                 get("/products");
 
         Object name = response.path("name[0]");
@@ -120,6 +122,29 @@ public final class ProductsTests extends BaseTest {
                 body("category", hasItems("fresh-produce"),
                         "inStock", hasItems(true),
                         "category", everyItem(startsWith("fresh"))
+                );
+        logResponse(response);
+    }
+
+    @Test(description = "unsupported test case, as API does not support multiple query parameters", enabled = false)
+    @GroceryShopTeam(author = Tester.CHINMAY, category = TestCategory.SANITY)
+    void testGetAllProductsForMultipleCategoriesInStock(Map<String, String> map) {
+        HashMap<String, String> queryParameters = new HashMap<>();
+        queryParameters.put("available", map.get("Availability"));
+        queryParameters.put("category", map.get("Product Category"));
+
+        Response response = given().
+                queryParams(queryParameters).
+                get("/products");
+
+        Object name = response.path("name[0]");
+        System.out.println("-----Fetching first object's value-----");
+        System.out.println("name = " + name);
+
+        response.then().log().all().
+                assertThat().statusCode(200).
+                body("category", hasItems("fresh-produce", "coffee"),
+                        "inStock", hasItems(true)
                 );
         logResponse(response);
     }
@@ -174,7 +199,7 @@ public final class ProductsTests extends BaseTest {
         RequestSpecification requestSpecification = given().pathParam("cartId", map.get("Cart Id"));
 
         Response response = requestSpecification.
-                body(new JSONObject(product).toString()).
+                body(product).
                 post("/carts/{cartId}/items");
 
         response.then().log().all();

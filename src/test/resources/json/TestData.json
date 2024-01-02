@@ -34,7 +34,7 @@
     "Test Description": "To check whether the user is able to add an item to cart",
     "Execute": "no",
     "Cart Id": "Y3OIBjFQ9G3WuAMNOdfWm",
-    "Cart Item": 8739,
+    "Cart Item": 5477,
     "Expected Status Code": "201"
   },
   {
@@ -88,13 +88,24 @@
     "Test Description": "To check whether the user is able to fetch products of specific category which are in stock",
     "Execute": "no",
     "Product Category": "fresh-produce",
-    "Availability": true
+    "Availability": true,
+    "Expected Status Code": "200"
+  },
+  {
+    "Note": "NOT TO BE EXECUTED: This case is here for demo purposes only, as this API does not support multiple query parameters",
+    "BaseUri": "https://simple-grocery-store-api.glitch.me",
+    "Test Name": "testGetAllProductsForMultipleCategoriesInStock",
+    "Test Description": "To check whether the user is able to fetch products of multiple categories which are in stock",
+    "Execute": "no",
+    "Product Category": "fresh-produce; coffee",
+    "Availability": true,
+    "Expected Status Code": "200"
   },
   {
     "BaseUri": "https://simple-grocery-store-api.glitch.me",
     "Test Name": "testModifyItemsInCart",
     "Test Description": "To check whether the user is able to modify items present in the cart",
-    "Execute": "yes",
+    "Execute": "no",
     "Cart Id": "Y3OIBjFQ9G3WuAMNOdfWm",
     "Item Id": "699279432",
     "Expected Status Code": "204"

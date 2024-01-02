@@ -8,13 +8,11 @@ import com.grocery.enums.Tester;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.assertj.core.api.Assertions;
-import org.json.JSONObject;
 import org.testng.annotations.Test;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.grocery.builder.RequestBuilder.initiateRequest;
 import static com.grocery.reports.GroceryShopReportLogger.logRequestParams;
 import static com.grocery.reports.GroceryShopReportLogger.logResponse;
 import static com.grocery.utils.Utilities.writeDataToJsonFile;
@@ -68,21 +66,21 @@ public final class CartTests extends BaseTest {
     @GroceryShopTeam(author = Tester.CHINMAY, category = TestCategory.SANITY)
     void testModifyItemsInCart(Map<String, String> map) {
         Map<String, Object> product = new HashMap<>();
-        product.put("quantity", 3);
+        product.put("quantity", 7);
 
         given().
                 pathParam("cartId", map.get("Cart Id")).
                 pathParam("itemId", map.get("Item Id")).
-                body(new JSONObject(product).toString()).
+                body(product).
                 patch("/carts/{cartId}/items/{itemId}");
     }
 
     @Test
     @GroceryShopTeam(author = Tester.CHINMAY, category = TestCategory.SANITY)
     void testDeleteItemsFromCart(Map<String, String> map) {
-        RequestSpecification requestSpecification = initiateRequest().buildRequestForDeleteCalls()
-                .pathParam("cartId", map.get("Cart Id"))
-                .pathParam("itemId", map.get("Item Id"));
+        RequestSpecification requestSpecification = given().
+                pathParam("cartId", map.get("Cart Id")).
+                pathParam("itemId", map.get("Item Id"));
 
         Response response = requestSpecification.delete("/carts/{cartId}/items/{itemId}");
         logRequestParams(requestSpecification);

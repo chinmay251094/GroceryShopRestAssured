@@ -44,7 +44,7 @@
     "Test Description": "To check whether the user is able to fetch existing items in cart",
     "Execute": "yes",
     "Count": 1,
-    "Priority": 1,
+    "Priority": 2,
     "Id": 6
   },
   {
@@ -102,5 +102,13 @@
     "Count": 1,
     "Priority": 1,
     "Id": 13
+  },
+  {
+    "Test Name": "testGetAllProductsForMultipleCategoriesInStock",
+    "Test Description": "To check whether the user is able to fetch products of multiple categories which are in stock",
+    "Execute": "yes",
+    "Count": 1,
+    "Priority": 1,
+    "Id": 14
   }
 ]

@@ -17,9 +17,7 @@ public class PropertyUtils {
     private static final Properties property = new Properties();
 
     static {
-        //FileInputStream file;
         try (FileInputStream file = new FileInputStream(FrameworkConstants.getConfigPath())) {
-            //file = new FileInputStream(FrameworkConstants.getConfigPath());
             property.load(file);
 
             for (Map.Entry<Object, Object> entry : property.entrySet()) {
