@@ -110,5 +110,21 @@
     "Count": 1,
     "Priority": 1,
     "Id": 14
+  },
+  {
+    "Test Name": "testFileDownload",
+    "Test Description": "To check whether the user is able to download a file",
+    "Execute": "yes",
+    "Count": 1,
+    "Priority": 1,
+    "Id": 15
+  },
+  {
+    "Test Name": "testFormUrlEncoding",
+    "Test Description": "To check the Form URL encoding",
+    "Execute": "yes",
+    "Count": 1,
+    "Priority": 1,
+    "Id": 16
   }
 ]

@@ -12,6 +12,8 @@ import org.testng.annotations.BeforeMethod;
 
 import java.util.Map;
 
+import static io.restassured.config.EncoderConfig.encoderConfig;
+import static io.restassured.config.RestAssuredConfig.config;
 import static org.hamcrest.Matchers.*;
 
 @MustExtendBaseTest
@@ -25,18 +27,28 @@ public class BaseTest {
 
         EnvironmentUtils.setBaseUri(map.get("BaseUri"));
 
-        RestAssured.requestSpecification = new RequestSpecBuilder().
-                setContentType(ContentType.JSON).
-                setBaseUri(map.get("BaseUri")).
-                log(LogDetail.ALL).build();
+        String typeOfEncoding = map.get("Encoding");
+
+        if (typeOfEncoding.equalsIgnoreCase("JSON")) {
+            RestAssured.requestSpecification = new RequestSpecBuilder().
+                    setContentType(ContentType.JSON).
+                    setBaseUri(map.get("BaseUri")).
+                    log(LogDetail.ALL).build();
+        } else if (typeOfEncoding.equalsIgnoreCase("FORM_URL_ENCODED")) {
+            RestAssured.requestSpecification = new RequestSpecBuilder().
+                    setContentType(ContentType.URLENC).
+                    setBaseUri(map.get("BaseUri")).
+                    log(LogDetail.ALL).
+                    build().
+                    config(config().encoderConfig(encoderConfig().
+                            appendDefaultContentCharsetToContentTypeIfUndefined(false)));
+        }
 
         try {
             RestAssured.responseSpecification = new ResponseSpecBuilder().
                     expectStatusCode(Integer.parseInt(map.get("Expected Status Code"))).
-                    expectHeader("Content-Type", is(anyOf(equalTo("application/json; charset=utf-8"), nullValue()))).build();
+                    expectHeader("Content-Type", is(anyOf(equalTo("application/json; charset=utf-8"), equalTo("application/json"), nullValue()))).build();
         } catch (NumberFormatException e) {
-            // Handling the case where the expected status code is either not a valid number or not mentioned
-            System.err.println("Error: Invalid or missing expected status code in test data.");
             throw new GroceryShopException("Invalid or missing expected status code in test data.");
         }
     }

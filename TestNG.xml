@@ -13,6 +13,7 @@
             <class name="com.grocery.tests.CartTests"/>
             <class name="com.grocery.tests.AuthenticationTests"/>
             <class name="com.grocery.tests.OrdersTests"/>
+            <class name="com.grocery.tests.MiscellaneousTests"/>
         </classes>
     </test>
 </suite>
