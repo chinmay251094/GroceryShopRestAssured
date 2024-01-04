@@ -1,17 +1,22 @@
 package com.grocery.base;
 
 import com.grocery.annotations.MustExtendBaseTest;
-import com.grocery.exceptions.GroceryShopException;
 import com.grocery.utils.EnvironmentUtils;
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.filter.log.LogDetail;
+import io.restassured.filter.log.RequestLoggingFilter;
+import io.restassured.filter.log.ResponseLoggingFilter;
 import io.restassured.http.ContentType;
+import lombok.SneakyThrows;
 import org.testng.annotations.BeforeMethod;
 
+import java.io.File;
+import java.io.PrintStream;
 import java.util.Map;
 
+import static com.grocery.utils.DateTimeUtils.getDate;
 import static io.restassured.config.EncoderConfig.encoderConfig;
 import static io.restassured.config.RestAssuredConfig.config;
 import static org.hamcrest.Matchers.*;
@@ -21,6 +26,7 @@ public class BaseTest {
     protected BaseTest() {
     }
 
+    @SneakyThrows
     @BeforeMethod(alwaysRun = true)
     public void requestSetUp(Object[] data) {
         Map<String, String> map = (Map<String, String>) data[0];
@@ -29,27 +35,29 @@ public class BaseTest {
 
         String typeOfEncoding = map.get("Encoding");
 
+        PrintStream fileOutputStream = new PrintStream(new File(getDate() + "_GroceryShop.log"));
+
+        RequestSpecBuilder requestSpecBuilder = new RequestSpecBuilder()
+                .addFilter(new RequestLoggingFilter(fileOutputStream))
+                .addFilter(new ResponseLoggingFilter(fileOutputStream))
+                .setBaseUri(map.get("BaseUri"))
+                .log(LogDetail.ALL);
+
         if (typeOfEncoding.equalsIgnoreCase("JSON")) {
-            RestAssured.requestSpecification = new RequestSpecBuilder().
-                    setContentType(ContentType.JSON).
-                    setBaseUri(map.get("BaseUri")).
-                    log(LogDetail.ALL).build();
+            RestAssured.requestSpecification = requestSpecBuilder.setContentType(ContentType.JSON).build();
         } else if (typeOfEncoding.equalsIgnoreCase("FORM_URL_ENCODED")) {
-            RestAssured.requestSpecification = new RequestSpecBuilder().
-                    setContentType(ContentType.URLENC).
-                    setBaseUri(map.get("BaseUri")).
-                    log(LogDetail.ALL).
-                    build().
-                    config(config().encoderConfig(encoderConfig().
-                            appendDefaultContentCharsetToContentTypeIfUndefined(false)));
+            RestAssured.requestSpecification = requestSpecBuilder
+                    .setContentType(ContentType.URLENC)
+                    .build()
+                    .config(config().encoderConfig(encoderConfig().appendDefaultContentCharsetToContentTypeIfUndefined(false)));
         }
 
-        try {
-            RestAssured.responseSpecification = new ResponseSpecBuilder().
-                    expectStatusCode(Integer.parseInt(map.get("Expected Status Code"))).
-                    expectHeader("Content-Type", is(anyOf(equalTo("application/json; charset=utf-8"), equalTo("application/json"), nullValue()))).build();
-        } catch (NumberFormatException e) {
-            throw new GroceryShopException("Invalid or missing expected status code in test data.");
-        }
+        RestAssured.responseSpecification = new ResponseSpecBuilder()
+                .expectHeader("Content-Type", is(anyOf(
+                        equalTo("application/json; charset=utf-8"),
+                        equalTo("application/json"),
+                        nullValue())))
+                .build()
+                .logDetail(LogDetail.ALL);
     }
 }

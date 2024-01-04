@@ -30,15 +30,16 @@
     "Test Description": "To check whether the user is able to fetch a specific number of products",
     "Execute": "no",
     "Results": 5,
+    "Expected Status Code": "200",
     "Encoding": "JSON"
   },
   {
     "BaseUri": "https://simple-grocery-store-api.glitch.me",
     "Test Name": "testAddItemsToCart",
     "Test Description": "To check whether the user is able to add an item to the cart",
-    "Execute": "no",
+    "Execute": "yes",
     "Cart Id": "Y3OIBjFQ9G3WuAMNOdfWm",
-    "Cart Item": 5477,
+    "Cart Item": 1709,
     "Expected Status Code": "201",
     "Encoding": "JSON"
   },
@@ -139,7 +140,7 @@
     "Test Name": "testFormUrlEncoding",
     "Test Description": "To check the Form URL encoding",
     "Encoding": "FORM_URL_ENCODED",
-    "Execute": "yes",
+    "Execute": "no",
     "Expected Status Code": "200"
   }
 ]

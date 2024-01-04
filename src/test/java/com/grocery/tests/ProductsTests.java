@@ -1,5 +1,7 @@
 package com.grocery.tests;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.grocery.annotations.GroceryShopTeam;
 import com.grocery.base.BaseTest;
 import com.grocery.constants.FrameworkConstants;
@@ -9,6 +11,7 @@ import io.restassured.http.Headers;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
+import lombok.SneakyThrows;
 import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;
 
@@ -183,29 +186,44 @@ public final class ProductsTests extends BaseTest {
         logResponse(response);
 
         runAndVerifyMandatoryPass(() -> {
-            response.then().body(JsonSchemaValidator.matchesJsonSchemaInClasspath(FrameworkConstants.getRESOURCEPATH() + "/files/ProductsSchema.json"));
+            response.then().body(JsonSchemaValidator.matchesJsonSchemaInClasspath("ProductsSchema.json"));
         }, "Schema does not match.");
 
         Assertions.assertThat(response.getStatusCode()).isEqualTo(200);
     }
 
+    @SneakyThrows
     @Test
     @GroceryShopTeam(author = Tester.CHINMAY, category = TestCategory.SANITY)
     void testAddItemsToCart(Map<String, String> map) {
-        Map<String, Object> product = new HashMap<>();
+        /*Map<String, Object> product = new HashMap<>();
+        product.put("productId", map.get("Cart Item"));
+        product.put("quantity", 3);*/
+
+        ObjectMapper mapper = new ObjectMapper();
+        ObjectNode product = mapper.createObjectNode();
+
         product.put("productId", map.get("Cart Item"));
         product.put("quantity", 3);
 
         RequestSpecification requestSpecification = given().pathParam("cartId", map.get("Cart Id"));
 
-        Response response = requestSpecification.
-                body(product).
-                post("/carts/{cartId}/items");
+        // Log the request details
+        logRequestInformation(requestSpecification);
 
+        Response response = requestSpecification
+                .body(product)
+                .post("/carts/{cartId}/items");
+
+        int expectedStatusCode = Integer.parseInt(map.get("Expected Status Code"));
+        int actualStatusCode = response.getStatusCode();
+
+        // Log the response details
         response.then().log().all();
 
         storeResponseToJsonFile(response, FrameworkConstants.getRESOURCEPATH() + "/files/ResponseData.json");
+        logResponse(response);
 
-        logRequestInformation(requestSpecification);
+        response.then().body(String.valueOf(actualStatusCode), is(equalTo(expectedStatusCode)));
     }
 }

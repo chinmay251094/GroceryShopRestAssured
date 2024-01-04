@@ -17,6 +17,9 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.Base64;
 import java.util.List;
@@ -68,6 +71,11 @@ public final class UtilityService {
 
     public static void dynamicElementSynchronization(int waitFor) {
         Uninterruptibles.sleepUninterruptibly(waitFor, TimeUnit.SECONDS);
+    }
+
+    public static boolean checkFileExists(String filePath) {
+        Path path = Paths.get(filePath);
+        return Files.exists(path) && Files.isRegularFile(path);
     }
 
     @SneakyThrows

@@ -22,6 +22,13 @@ public final class DateTimeUtils {
         return sdf.format(resultdate);
     }
 
+    public static String getDate() {
+        long yourmilliseconds = System.currentTimeMillis();
+        SimpleDateFormat sdf = new SimpleDateFormat("MMM dd, yyyy");
+        Date resultdate = new Date(yourmilliseconds);
+        return sdf.format(resultdate);
+    }
+
     public static String getSystemDate() {
         long yourmilliseconds = System.currentTimeMillis();
         SimpleDateFormat sdf = new SimpleDateFormat("MMMMMMMM dd, yyyy");

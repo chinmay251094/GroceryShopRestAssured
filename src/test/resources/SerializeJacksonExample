@@ -1,0 +1,22 @@
+ObjectMapper mapper = new ObjectMapper();
+ObjectNode node = mapper.createObjectNode();
+
+node.put("someKey", "someValue");
+
+//Now pass the array as part of body to post()
+
+String data = mapper.writeValueAsString(node);
+-----------------------------------------------------------------
+ObjectMapper mapper = new ObjectMapper();
+ArrayNode nodeList = mapper.createArrayNode();
+
+ObjectNode nodeMap = mapper.createObjectNode();
+
+nodeMap.put("key1","value1");
+nodeMap.put("key2","value2");
+
+nodeList.add(nodeMap);
+
+//Now pass the array as part of body to post()
+
+String data = mapper.writeValueAsString(nodeList);
