@@ -13,6 +13,7 @@ import lombok.SneakyThrows;
 import org.testng.annotations.BeforeMethod;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.PrintStream;
 import java.util.Map;
 
@@ -35,11 +36,13 @@ public class BaseTest {
 
         String typeOfEncoding = map.get("Encoding");
 
-        PrintStream fileOutputStream = new PrintStream(new File(getDate() + "_GroceryShop.log"));
+        String currentDate = getDate();
+        FileOutputStream fileOutputStream = new FileOutputStream(new File(currentDate + "_GroceryShop.log"), true);
+        PrintStream printStream = new PrintStream(fileOutputStream);
 
         RequestSpecBuilder requestSpecBuilder = new RequestSpecBuilder()
-                .addFilter(new RequestLoggingFilter(fileOutputStream))
-                .addFilter(new ResponseLoggingFilter(fileOutputStream))
+                .addFilter(new RequestLoggingFilter(printStream))
+                .addFilter(new ResponseLoggingFilter(printStream))
                 .setBaseUri(map.get("BaseUri"))
                 .log(LogDetail.ALL);
 
