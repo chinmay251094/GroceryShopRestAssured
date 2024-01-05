@@ -39,8 +39,17 @@
     "Test Description": "To check whether the user is able to add an item to the cart",
     "Execute": "yes",
     "Cart Id": "Y3OIBjFQ9G3WuAMNOdfWm",
-    "Cart Item": 1709,
+    "Cart Item": 2177,
     "Expected Status Code": "201",
+    "Encoding": "JSON"
+  },
+  {
+    "BaseUri": "https://simple-grocery-store-api.glitch.me",
+    "Test Name": "testDeleteItemsFromCart",
+    "Test Description": "To check whether the user is able to delete an item present in the cart",
+    "Execute": "no",
+    "Cart Id": "Y3OIBjFQ9G3WuAMNOdfWm",
+    "Item Id": "955874982",
     "Encoding": "JSON"
   },
   {
@@ -50,15 +59,6 @@
     "Execute": "no",
     "Cart Id": "Y3OIBjFQ9G3WuAMNOdfWm",
     "Expected Status Code": "200",
-    "Encoding": "JSON"
-  },
-  {
-    "BaseUri": "https://simple-grocery-store-api.glitch.me",
-    "Test Name": "testDeleteItemsFromCart",
-    "Test Description": "To check whether the user is able to delete an item present in the cart",
-    "Execute": "no",
-    "Cart Id": "tgY8xQoPywwtGKtH8WpYz",
-    "Item Id": "228648149",
     "Encoding": "JSON"
   },
   {

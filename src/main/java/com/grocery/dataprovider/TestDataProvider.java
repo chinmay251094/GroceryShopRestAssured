@@ -1,6 +1,7 @@
 package com.grocery.dataprovider;
 
 import com.grocery.constants.FrameworkConstants;
+import com.grocery.exceptions.GroceryShopException;
 import com.grocery.utils.JsonUtils;
 import org.testng.annotations.DataProvider;
 
@@ -38,7 +39,7 @@ public final class TestDataProvider {
                 }
             }
         } catch (Exception ex) {
-            throw new RuntimeException("An error occurred while fetching data source.");
+            throw new GroceryShopException("An error occurred while fetching data source.");
         }
         return executeMethodsList.toArray();
     }

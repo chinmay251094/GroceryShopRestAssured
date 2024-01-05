@@ -1,12 +1,11 @@
 package com.grocery.tests;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.grocery.annotations.GroceryShopTeam;
 import com.grocery.base.BaseTest;
 import com.grocery.constants.FrameworkConstants;
 import com.grocery.enums.TestCategory;
 import com.grocery.enums.Tester;
+import com.grocery.pojo.CartItems;
 import io.restassured.http.Headers;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.Response;
@@ -200,11 +199,13 @@ public final class ProductsTests extends BaseTest {
         product.put("productId", map.get("Cart Item"));
         product.put("quantity", 3);*/
 
-        ObjectMapper mapper = new ObjectMapper();
+        /*ObjectMapper mapper = new ObjectMapper();
         ObjectNode product = mapper.createObjectNode();
 
         product.put("productId", map.get("Cart Item"));
-        product.put("quantity", 3);
+        product.put("quantity", 3);*/
+
+        CartItems items = new CartItems(Integer.parseInt(map.get("Cart Item")), 3);
 
         RequestSpecification requestSpecification = given().pathParam("cartId", map.get("Cart Id"));
 
@@ -212,7 +213,7 @@ public final class ProductsTests extends BaseTest {
         logRequestInformation(requestSpecification);
 
         Response response = requestSpecification
-                .body(product)
+                .body(items)
                 .post("/carts/{cartId}/items");
 
         int expectedStatusCode = Integer.parseInt(map.get("Expected Status Code"));
