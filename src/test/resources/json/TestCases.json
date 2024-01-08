@@ -126,5 +126,13 @@
     "Count": 1,
     "Priority": 1,
     "Id": 16
+  },
+  {
+    "Test Name": "testCreateNewCollection",
+    "Test Description": "To post a complex POJO",
+    "Execute": "yes",
+    "Count": 1,
+    "Priority": 1,
+    "Id": 17
   }
 ]

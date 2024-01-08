@@ -1,5 +1,6 @@
 package com.grocery.pojo;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,7 +12,8 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Folder {
-    private List<RequestRoot> requestRoot;
+    private List<RequestRoot> item;
     private String name;
 }

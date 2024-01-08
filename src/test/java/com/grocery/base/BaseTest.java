@@ -46,14 +46,22 @@ public class BaseTest {
                 .setBaseUri(map.get("BaseUri"))
                 .log(LogDetail.ALL);
 
+        ContentType contentType;
         if (typeOfEncoding.equalsIgnoreCase("JSON")) {
-            RestAssured.requestSpecification = requestSpecBuilder.setContentType(ContentType.JSON).build();
+            contentType = ContentType.JSON;
         } else if (typeOfEncoding.equalsIgnoreCase("FORM_URL_ENCODED")) {
-            RestAssured.requestSpecification = requestSpecBuilder
-                    .setContentType(ContentType.URLENC)
-                    .build()
-                    .config(config().encoderConfig(encoderConfig().appendDefaultContentCharsetToContentTypeIfUndefined(false)));
+            contentType = ContentType.URLENC;
+        } else if (typeOfEncoding.equalsIgnoreCase("TEXT_PLAIN")) {
+            contentType = ContentType.TEXT;
+        } else {
+            // Handle unsupported type
+            throw new IllegalArgumentException("Unsupported encoding type: " + typeOfEncoding);
         }
+
+        RestAssured.requestSpecification = requestSpecBuilder
+                .setContentType(contentType)
+                .build()
+                .config(config().encoderConfig(encoderConfig().appendDefaultContentCharsetToContentTypeIfUndefined(false)));
 
         RestAssured.responseSpecification = new ResponseSpecBuilder()
                 .expectHeader("Content-Type", is(anyOf(

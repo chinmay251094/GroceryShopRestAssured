@@ -178,6 +178,14 @@ public class Utilities {
         return new String(encodedBytes);
     }
 
+    public static String decodeTextToBase64(String text) {
+        // Encode the text to Base64
+        byte[] encodedBytes = Base64.getEncoder().encode(text.getBytes());
+
+        // Convert the byte array to a string
+        return new String(encodedBytes);
+    }
+
     protected static void savePropertiesToFile(Properties properties, String filePath) {
         try (FileOutputStream fos = new FileOutputStream(filePath)) {
             properties.store(fos, "Response Properties");

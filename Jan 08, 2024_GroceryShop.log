@@ -1,0 +1,2306 @@
+Request method:	POST
+Request URI:	https://simple-grocery-store-api.glitch.me/carts/Y3OIBjFQ9G3WuAMNOdfWm/items
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	cartId=Y3OIBjFQ9G3WuAMNOdfWm
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "productId": 2177,
+    "quantity": 3
+}
+HTTP/1.1 400 Bad Request
+Date: Mon, 08 Jan 2024 10:07:33 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 56
+Connection: keep-alive
+x-powered-by: Express
+etag: W/"38-doJkVicOSjcQ/BgI6ZqGcJtsAl4"
+
+{
+    "error": "This product has already been added to cart."
+}
+Request method:	POST
+Request URI:	https://api.getpostman.com/collections
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		X-API-Key=VUUxQlN5MDJOVGszWldFM04yRTFPRFl5T0RGaFltSm1NRGxpTkdRdE9ESXdaamxpWWpBd09XWXdZV0kzT0dWbE1ERXhOVFUyTTJVMU1qa3dZVGhoWWc9PQ==
+				Accept=*/*
+				Content-Type=application/x-www-form-urlencoded
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+Request method:	POST
+Request URI:	https://api.getpostman.com/collections
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		X-API-Key=VUUxQlN5MDJOVGszWldFM04yRTFPRFl5T0RGaFltSm1NRGxpTkdRdE9ESXdaamxpWWpBd09XWXdZV0kzT0dWbE1ERXhOVFUyTTJVMU1qa3dZVGhoWWc9PQ==
+				Accept=*/*
+				Content-Type=application/x-www-form-urlencoded
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 401 Unauthorized
+Date: Mon, 08 Jan 2024 10:07:36 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 120
+Connection: keep-alive
+x-frame-options: SAMEORIGIN
+Access-Control-Allow-Origin: *
+x-srv-trace: v=1;t=2338cb44dd64fc90
+x-srv-span: v=1;s=49d6b5e0191172b8
+X-RateLimit-Limit: 400
+X-RateLimit-Remaining: 399
+X-RateLimit-Reset: 1704708516
+ETag: W/"78-WpLmxRlFkKKPPDh/y4B5Gn3NuSs"
+Vary: Accept-Encoding
+
+{
+    "error": {
+        "name": "AuthenticationError",
+        "message": "Invalid API Key. Every request requires a valid API Key to be sent."
+    }
+}
+HTTP/1.1 401 Unauthorized
+Date: Mon, 08 Jan 2024 10:07:36 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 120
+Connection: keep-alive
+x-frame-options: SAMEORIGIN
+Access-Control-Allow-Origin: *
+x-srv-trace: v=1;t=2338cb44dd64fc90
+x-srv-span: v=1;s=49d6b5e0191172b8
+X-RateLimit-Limit: 400
+X-RateLimit-Remaining: 399
+X-RateLimit-Reset: 1704708516
+ETag: W/"78-WpLmxRlFkKKPPDh/y4B5Gn3NuSs"
+Vary: Accept-Encoding
+
+{
+    "error": {
+        "name": "AuthenticationError",
+        "message": "Invalid API Key. Every request requires a valid API Key to be sent."
+    }
+}
+Request method:	POST
+Request URI:	https://api.getpostman.com/collections
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		X-API-Key=VUUxQlN5MDJOVGszWldFM04yRTFPRFl5T0RGaFltSm1NRGxpTkdRdE9ESXdaamxpWWpBd09XWXdZV0kzT0dWbE1ERXhOVFUyTTJVMU1qa3dZVGhoWWc9PQ==
+				Accept=*/*
+				Content-Type=application/x-www-form-urlencoded
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 401 Unauthorized
+Date: Mon, 08 Jan 2024 10:09:34 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 120
+Connection: keep-alive
+x-frame-options: SAMEORIGIN
+Access-Control-Allow-Origin: *
+x-srv-trace: v=1;t=970222a02035490c
+x-srv-span: v=1;s=8b5c170afbe3e529
+X-RateLimit-Limit: 400
+X-RateLimit-Remaining: 399
+X-RateLimit-Reset: 1704708634
+ETag: W/"78-WpLmxRlFkKKPPDh/y4B5Gn3NuSs"
+Vary: Accept-Encoding
+
+{
+    "error": {
+        "name": "AuthenticationError",
+        "message": "Invalid API Key. Every request requires a valid API Key to be sent."
+    }
+}
+Request method:	POST
+Request URI:	https://api.getpostman.com/collections
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		X-API-Key=PMAK-6597ea77a586281abbf09b4d-820f9bb009f0ab78ee0115563e5290a8ab
+				Accept=*/*
+				Content-Type=application/x-www-form-urlencoded
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 400 Bad Request
+Date: Mon, 08 Jan 2024 10:11:49 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 120
+Connection: keep-alive
+x-frame-options: SAMEORIGIN
+Access-Control-Allow-Origin: *
+x-srv-trace: v=1;t=83c18b8752a1c0f8
+x-srv-span: v=1;s=7a7ef184ce6b3fc5
+X-RateLimit-Limit: 300
+X-RateLimit-Remaining: 299
+X-RateLimit-Reset: 1704708769
+ETag: W/"78-TZ2sGWjEAAh3pn5mhZHTlORMobg"
+Vary: Accept-Encoding
+
+{
+    "error": {
+        "name": "paramMissingError",
+        "message": "Parameter is missing in the request.",
+        "details": {
+            "param": "collection"
+        }
+    }
+}
+Request method:	POST
+Request URI:	https://api.getpostman.com/collections
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		X-API-Key=PMAK-6597ea77a586281abbf09b4d-820f9bb009f0ab78ee0115563e5290a8ab
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "collection": {
+        "info": {
+            "name": "Sample Collection 1 RestAssured",
+            "description": "This is just a sample collection.",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+        }
+    },
+    "item": [
+        {
+            "item": [
+                {
+                    "request": {
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":\"123\"}"
+                        },
+                        "url": "https://postman-echo.com/post",
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "description": "This is a sample POST Request"
+                    },
+                    "name": "Sample POST Request"
+                }
+            ],
+            "name": "This is a folder"
+        }
+    ]
+}
+HTTP/1.1 400 Bad Request
+Date: Mon, 08 Jan 2024 10:12:55 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 150
+Connection: keep-alive
+x-frame-options: SAMEORIGIN
+Access-Control-Allow-Origin: *
+x-srv-trace: v=1;t=edc17a88fbff4bff
+x-srv-span: v=1;s=eb28241d30135c54
+X-RateLimit-Limit: 300
+X-RateLimit-Remaining: 299
+X-RateLimit-Reset: 1704708834
+ETag: W/"96-hsi1PIfJE+OHiJ629c0L61hrHpA"
+Vary: Accept-Encoding
+
+{
+    "error": {
+        "name": "malformedRequestError",
+        "message": "Found 1 errors with the supplied collection.",
+        "details": [
+            ": must have required property 'item'"
+        ]
+    }
+}
+Request method:	POST
+Request URI:	https://api.getpostman.com/collections
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		X-API-Key=PMAK-6597ea77a586281abbf09b4d-820f9bb009f0ab78ee0115563e5290a8ab
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "collection": {
+        "info": {
+            "name": "Sample Collection 1 RestAssured",
+            "description": "This is just a sample collection.",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+        },
+        "item": [
+            {
+                "item": [
+                    {
+                        "request": {
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\"data\":\"123\"}"
+                            },
+                            "url": "https://postman-echo.com/post",
+                            "method": "POST",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "description": "This is a sample POST Request"
+                        },
+                        "name": "Sample POST Request"
+                    }
+                ],
+                "name": "This is a folder"
+            }
+        ]
+    }
+}
+HTTP/1.1 200 OK
+Date: Mon, 08 Jan 2024 10:17:50 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 155
+Connection: keep-alive
+x-frame-options: SAMEORIGIN
+Access-Control-Allow-Origin: *
+x-srv-trace: v=1;t=7be5d958080005dd
+x-srv-span: v=1;s=466a12a877dcdfff
+X-RateLimit-Limit: 300
+X-RateLimit-Remaining: 299
+X-RateLimit-Reset: 1704709130
+ETag: W/"9b-m4bFdD0uYkKNfGyxk5oV4itIZ2A"
+Vary: Accept-Encoding
+
+{
+    "collection": {
+        "id": "ec4a57cc-2d06-4de7-8b84-92542e89ed61",
+        "name": "Sample Collection 1 RestAssured",
+        "uid": "20382902-ec4a57cc-2d06-4de7-8b84-92542e89ed61"
+    }
+}
+Request method:	POST
+Request URI:	https://api.getpostman.com/collections
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		X-API-Key=PMAK-6597ea77a586281abbf09b4d-820f9bb009f0ab78ee0115563e5290a8ab
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "collection": {
+        "info": {
+            "name": "Sample Collection 1 RestAssured",
+            "description": "This is just a sample collection.",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+        },
+        "item": [
+            {
+                "item": [
+                    {
+                        "request": {
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\"data\":\"123\"}"
+                            },
+                            "url": "https://postman-echo.com/post",
+                            "method": "POST",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "description": "This is a sample POST Request"
+                        },
+                        "name": "Sample POST Request"
+                    }
+                ],
+                "name": "This is a folder"
+            }
+        ]
+    }
+}
+HTTP/1.1 200 OK
+Date: Mon, 08 Jan 2024 10:25:05 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 155
+Connection: keep-alive
+x-frame-options: SAMEORIGIN
+Access-Control-Allow-Origin: *
+x-srv-trace: v=1;t=6b92c650bca6cee1
+x-srv-span: v=1;s=4a565b03edc6d2d6
+X-RateLimit-Limit: 300
+X-RateLimit-Remaining: 299
+X-RateLimit-Reset: 1704709564
+ETag: W/"9b-b3Nh94Mq0Le6kIol0Nn6v6kXs7g"
+Vary: Accept-Encoding
+
+{
+    "collection": {
+        "id": "ccea27b4-42a0-4d23-9f5f-e7ee127a3f5f",
+        "name": "Sample Collection 1 RestAssured",
+        "uid": "20382902-ccea27b4-42a0-4d23-9f5f-e7ee127a3f5f"
+    }
+}
+Request method:	POST
+Request URI:	https://api.getpostman.com/collections
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		X-API-Key=PMAK-6597ea77a586281abbf09b4d-820f9bb009f0ab78ee0115563e5290a8ab
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "collection": {
+        "info": {
+            "name": "Sample Collection 2 RestAssured",
+            "description": "This is just a sample collection.",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+        },
+        "item": [
+            {
+                "item": [
+                    {
+                        "request": {
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\"data\":\"123\"}"
+                            },
+                            "url": "https://postman-echo.com/post",
+                            "method": "POST",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "description": "This is a sample POST Request"
+                        },
+                        "name": "Sample POST Request"
+                    }
+                ],
+                "name": "This is a folder"
+            }
+        ]
+    }
+}
+HTTP/1.1 200 OK
+Date: Mon, 08 Jan 2024 10:25:32 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 155
+Connection: keep-alive
+x-frame-options: SAMEORIGIN
+Access-Control-Allow-Origin: *
+x-srv-trace: v=1;t=0d60686b650a21c0
+x-srv-span: v=1;s=e126bb4615c22047
+X-RateLimit-Limit: 300
+X-RateLimit-Remaining: 298
+X-RateLimit-Reset: 1704709564
+ETag: W/"9b-eIXB0maIt+OfQSNJkjcpH4GO/Mo"
+Vary: Accept-Encoding
+
+{
+    "collection": {
+        "id": "442f4313-16ca-4a33-bd88-4d8605166892",
+        "name": "Sample Collection 2 RestAssured",
+        "uid": "20382902-442f4313-16ca-4a33-bd88-4d8605166892"
+    }
+}
+Request method:	POST
+Request URI:	https://api.getpostman.com/collections
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		X-API-Key=PMAK-6597ea77a586281abbf09b4d-820f9bb009f0ab78ee0115563e5290a8ab
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "collection": {
+        "info": {
+            "name": "Sample Collection 3 RestAssured",
+            "description": "This is just a sample collection.",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+        },
+        "item": [
+            {
+                "item": [
+                    {
+                        "request": {
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\"data\":\"123\"}"
+                            },
+                            "url": "https://postman-echo.com/post",
+                            "method": "POST",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "description": "This is a sample POST Request"
+                        },
+                        "name": "Sample POST Request"
+                    }
+                ],
+                "name": "This is a folder"
+            }
+        ]
+    }
+}
+HTTP/1.1 200 OK
+Date: Mon, 08 Jan 2024 10:26:42 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 155
+Connection: keep-alive
+x-frame-options: SAMEORIGIN
+Access-Control-Allow-Origin: *
+x-srv-trace: v=1;t=ee81bfce3e9a918a
+x-srv-span: v=1;s=59c3a432e4d11238
+X-RateLimit-Limit: 300
+X-RateLimit-Remaining: 299
+X-RateLimit-Reset: 1704709661
+ETag: W/"9b-Cs+IR9HemmeG4tmkntVKAqchqLw"
+Vary: Accept-Encoding
+
+{
+    "collection": {
+        "id": "068f0236-a11f-4e37-a496-92c34fcc2460",
+        "name": "Sample Collection 3 RestAssured",
+        "uid": "20382902-068f0236-a11f-4e37-a496-92c34fcc2460"
+    }
+}
+Request method:	POST
+Request URI:	https://api.getpostman.com/collections
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		X-API-Key=PMAK-6597ea77a586281abbf09b4d-820f9bb009f0ab78ee0115563e5290a8ab
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "collection": {
+        "info": {
+            "name": "Sample Collection 3 RestAssured",
+            "description": "This is just a sample collection.",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+        },
+        "item": [
+            {
+                "item": [
+                    {
+                        "request": {
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\"data\":\"123\"}"
+                            },
+                            "url": "https://postman-echo.com/post",
+                            "method": "POST",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "description": "This is a sample POST Request"
+                        },
+                        "name": "Sample POST Request"
+                    }
+                ],
+                "name": "This is a folder"
+            }
+        ]
+    }
+}
+HTTP/1.1 200 OK
+Date: Mon, 08 Jan 2024 10:27:15 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 155
+Connection: keep-alive
+x-frame-options: SAMEORIGIN
+Access-Control-Allow-Origin: *
+x-srv-trace: v=1;t=8ae88a3f87df926b
+x-srv-span: v=1;s=dcbe72ced1e58396
+X-RateLimit-Limit: 300
+X-RateLimit-Remaining: 298
+X-RateLimit-Reset: 1704709661
+ETag: W/"9b-dS2ku5fna6yDDmXCCFHe1Q0bwBQ"
+Vary: Accept-Encoding
+
+{
+    "collection": {
+        "id": "df9c8540-8352-4af1-8a28-9131d08584f4",
+        "name": "Sample Collection 3 RestAssured",
+        "uid": "20382902-df9c8540-8352-4af1-8a28-9131d08584f4"
+    }
+}
+Request method:	POST
+Request URI:	https://api.getpostman.com/collections
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		X-API-Key=VUUxQlN5MDJOVGszWldFM04yRTFPRFl5T0RGaFltSm1NRGxpTkdRdE9ESXdaamxpWWpBd09XWXdZV0kzT0dWbE1ERXhOVFUyTTJVMU1qa3dZVGhoWWc9PQ==
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "collection": {
+        "info": {
+            "name": "Sample Collection 4 RestAssured",
+            "description": "This is just a sample collection.",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+        },
+        "item": [
+            {
+                "item": [
+                    {
+                        "request": {
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\"data\":\"123\"}"
+                            },
+                            "url": "https://postman-echo.com/post",
+                            "method": "POST",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "description": "This is a sample POST Request"
+                        },
+                        "name": "Sample POST Request"
+                    }
+                ],
+                "name": "This is a folder"
+            }
+        ]
+    }
+}
+HTTP/1.1 401 Unauthorized
+Date: Mon, 08 Jan 2024 10:29:24 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 120
+Connection: keep-alive
+x-frame-options: SAMEORIGIN
+Access-Control-Allow-Origin: *
+x-srv-trace: v=1;t=ceabd966dc144ba9
+x-srv-span: v=1;s=e0bb48850ae1bdf6
+X-RateLimit-Limit: 400
+X-RateLimit-Remaining: 399
+X-RateLimit-Reset: 1704709824
+ETag: W/"78-WpLmxRlFkKKPPDh/y4B5Gn3NuSs"
+Vary: Accept-Encoding
+
+{
+    "error": {
+        "name": "AuthenticationError",
+        "message": "Invalid API Key. Every request requires a valid API Key to be sent."
+    }
+}
+Request method:	POST
+Request URI:	https://api.getpostman.com/collections
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		X-API-Key=VUUxQlN5MDJOVGszWldFM04yRTFPRFl5T0RGaFltSm1NRGxpTkdRdE9ESXdaamxpWWpBd09XWXdZV0kzT0dWbE1ERXhOVFUyTTJVMU1qa3dZVGhoWWc9PQ==
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "collection": {
+        "info": {
+            "name": "Sample Collection 5 RestAssured",
+            "description": "This is just a sample collection.",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+        },
+        "item": [
+            {
+                "item": [
+                    {
+                        "request": {
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\"data\":\"123\"}"
+                            },
+                            "url": "https://postman-echo.com/post",
+                            "method": "POST",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "description": "This is a sample POST Request"
+                        },
+                        "name": "Sample POST Request"
+                    }
+                ],
+                "name": "This is a folder"
+            }
+        ]
+    }
+}
+HTTP/1.1 401 Unauthorized
+Date: Mon, 08 Jan 2024 10:33:25 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 120
+Connection: keep-alive
+x-frame-options: SAMEORIGIN
+Access-Control-Allow-Origin: *
+x-srv-trace: v=1;t=7479763e6617da0f
+x-srv-span: v=1;s=4cda4c8501f064cd
+X-RateLimit-Limit: 400
+X-RateLimit-Remaining: 399
+X-RateLimit-Reset: 1704710065
+ETag: W/"78-WpLmxRlFkKKPPDh/y4B5Gn3NuSs"
+Vary: Accept-Encoding
+
+{
+    "error": {
+        "name": "AuthenticationError",
+        "message": "Invalid API Key. Every request requires a valid API Key to be sent."
+    }
+}
+Request method:	POST
+Request URI:	https://api.getpostman.com/collections
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		X-API-Key=PMAK-6597ea77a586281abbf09b4d-820f9bb009f0ab78ee0115563e5290a8ab
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "collection": {
+        "info": {
+            "name": "Sample Collection 5 RestAssured",
+            "description": "This is just a sample collection.",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+        },
+        "item": [
+            {
+                "item": [
+                    {
+                        "request": {
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\"data\":\"123\"}"
+                            },
+                            "url": "https://postman-echo.com/post",
+                            "method": "POST",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "description": "This is a sample POST Request"
+                        },
+                        "name": "Sample POST Request"
+                    }
+                ],
+                "name": "This is a folder"
+            }
+        ]
+    }
+}
+HTTP/1.1 200 OK
+Date: Mon, 08 Jan 2024 10:45:23 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 155
+Connection: keep-alive
+x-frame-options: SAMEORIGIN
+Access-Control-Allow-Origin: *
+x-srv-trace: v=1;t=80602e532c61fb9a
+x-srv-span: v=1;s=f132df45bec11a71
+X-RateLimit-Limit: 300
+X-RateLimit-Remaining: 299
+X-RateLimit-Reset: 1704710782
+ETag: W/"9b-0E8PKxX9OeJEJNQIs/U/0xNIPeg"
+Vary: Accept-Encoding
+
+{
+    "collection": {
+        "id": "284c7d73-cc46-42e2-a795-8977338ef116",
+        "name": "Sample Collection 5 RestAssured",
+        "uid": "20382902-284c7d73-cc46-42e2-a795-8977338ef116"
+    }
+}
+Request method:	GET
+Request URI:	https://api.getpostman.com/collections/20382902-284c7d73-cc46-42e2-a795-8977338ef116
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	collectionUid=20382902-284c7d73-cc46-42e2-a795-8977338ef116
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 401 Unauthorized
+Date: Mon, 08 Jan 2024 10:45:25 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 120
+Connection: keep-alive
+x-frame-options: SAMEORIGIN
+Access-Control-Allow-Origin: *
+x-srv-trace: v=1;t=f487278e0677aec3
+x-srv-span: v=1;s=f831c666e8867502
+X-RateLimit-Limit: 400
+X-RateLimit-Remaining: 399
+X-RateLimit-Reset: 1704710785
+ETag: W/"78-WpLmxRlFkKKPPDh/y4B5Gn3NuSs"
+Vary: Accept-Encoding
+
+{
+    "error": {
+        "name": "AuthenticationError",
+        "message": "Invalid API Key. Every request requires a valid API Key to be sent."
+    }
+}
+Request method:	POST
+Request URI:	https://api.getpostman.com/collections
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		X-API-Key=PMAK-6597ea77a586281abbf09b4d-820f9bb009f0ab78ee0115563e5290a8ab
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "collection": {
+        "info": {
+            "name": "Sample Collection 43 RestAssured",
+            "description": "This is just a sample collection.",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+        },
+        "item": [
+            {
+                "item": [
+                    {
+                        "request": {
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\"data\":\"123\"}"
+                            },
+                            "url": "https://postman-echo.com/post",
+                            "method": "POST",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "description": "This is a sample POST Request"
+                        },
+                        "name": "Sample POST Request"
+                    }
+                ],
+                "name": "This is a folder"
+            }
+        ]
+    }
+}
+HTTP/1.1 200 OK
+Date: Mon, 08 Jan 2024 10:48:38 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 156
+Connection: keep-alive
+x-frame-options: SAMEORIGIN
+Access-Control-Allow-Origin: *
+x-srv-trace: v=1;t=37eda17d9900aa7d
+x-srv-span: v=1;s=226bd9488c3e9380
+X-RateLimit-Limit: 300
+X-RateLimit-Remaining: 299
+X-RateLimit-Reset: 1704710977
+ETag: W/"9c-7UQ0hf9JxHiwAID1ZsH6ysY3NL4"
+Vary: Accept-Encoding
+
+{
+    "collection": {
+        "id": "34ccb2d2-0355-450e-95df-5f42d51fc822",
+        "name": "Sample Collection 43 RestAssured",
+        "uid": "20382902-34ccb2d2-0355-450e-95df-5f42d51fc822"
+    }
+}
+Request method:	GET
+Request URI:	https://api.getpostman.com/collections/20382902-34ccb2d2-0355-450e-95df-5f42d51fc822
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	collectionUid=20382902-34ccb2d2-0355-450e-95df-5f42d51fc822
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 401 Unauthorized
+Date: Mon, 08 Jan 2024 10:49:13 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 120
+Connection: keep-alive
+x-frame-options: SAMEORIGIN
+Access-Control-Allow-Origin: *
+x-srv-trace: v=1;t=d9ea152118b15e44
+x-srv-span: v=1;s=0755809f9c52f3c2
+X-RateLimit-Limit: 400
+X-RateLimit-Remaining: 399
+X-RateLimit-Reset: 1704711013
+ETag: W/"78-WpLmxRlFkKKPPDh/y4B5Gn3NuSs"
+Vary: Accept-Encoding
+
+{
+    "error": {
+        "name": "AuthenticationError",
+        "message": "Invalid API Key. Every request requires a valid API Key to be sent."
+    }
+}
+Request method:	POST
+Request URI:	https://api.getpostman.com/collections
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		X-API-Key=PMAK-6597ea77a586281abbf09b4d-820f9bb009f0ab78ee0115563e5290a8ab
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "collection": {
+        "info": {
+            "name": "Sample Collection 43 RestAssured",
+            "description": "This is just a sample collection.",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+        },
+        "item": [
+            {
+                "item": [
+                    {
+                        "request": {
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\"data\":\"123\"}"
+                            },
+                            "url": "https://postman-echo.com/post",
+                            "method": "POST",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "description": "This is a sample POST Request"
+                        },
+                        "name": "Sample POST Request"
+                    }
+                ],
+                "name": "This is a folder"
+            }
+        ]
+    }
+}
+HTTP/1.1 200 OK
+Date: Mon, 08 Jan 2024 10:50:50 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 156
+Connection: keep-alive
+x-frame-options: SAMEORIGIN
+Access-Control-Allow-Origin: *
+x-srv-trace: v=1;t=abdfefb7b9389d51
+x-srv-span: v=1;s=0f16f3cbe01e5718
+X-RateLimit-Limit: 300
+X-RateLimit-Remaining: 299
+X-RateLimit-Reset: 1704711110
+ETag: W/"9c-bxEnwKVAoVk54wcq7WVfVcv/+DE"
+Vary: Accept-Encoding
+
+{
+    "collection": {
+        "id": "bd66b4ee-c9ce-47ce-8612-6a070c61a79c",
+        "name": "Sample Collection 43 RestAssured",
+        "uid": "20382902-bd66b4ee-c9ce-47ce-8612-6a070c61a79c"
+    }
+}
+Request method:	GET
+Request URI:	https://api.getpostman.com/collections/20382902-bd66b4ee-c9ce-47ce-8612-6a070c61a79c
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	collectionUid=20382902-bd66b4ee-c9ce-47ce-8612-6a070c61a79c
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 401 Unauthorized
+Date: Mon, 08 Jan 2024 10:50:52 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 120
+Connection: keep-alive
+x-frame-options: SAMEORIGIN
+Access-Control-Allow-Origin: *
+x-srv-trace: v=1;t=1be3fe170fefda80
+x-srv-span: v=1;s=a3a8c7439be82b66
+X-RateLimit-Limit: 400
+X-RateLimit-Remaining: 399
+X-RateLimit-Reset: 1704711112
+ETag: W/"78-WpLmxRlFkKKPPDh/y4B5Gn3NuSs"
+Vary: Accept-Encoding
+
+{
+    "error": {
+        "name": "AuthenticationError",
+        "message": "Invalid API Key. Every request requires a valid API Key to be sent."
+    }
+}
+Request method:	POST
+Request URI:	https://api.getpostman.com/collections
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		X-API-Key=PMAK-6597ea77a586281abbf09b4d-820f9bb009f0ab78ee0115563e5290a8ab
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "collection": {
+        "info": {
+            "name": "Sample Collection 43 RestAssured",
+            "description": "This is just a sample collection.",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+        },
+        "item": [
+            {
+                "item": [
+                    {
+                        "request": {
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\"data\":\"123\"}"
+                            },
+                            "url": "https://postman-echo.com/post",
+                            "method": "POST",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "description": "This is a sample POST Request"
+                        },
+                        "name": "Sample POST Request"
+                    }
+                ],
+                "name": "This is a folder"
+            }
+        ]
+    }
+}
+HTTP/1.1 200 OK
+Date: Mon, 08 Jan 2024 10:52:47 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 156
+Connection: keep-alive
+x-frame-options: SAMEORIGIN
+Access-Control-Allow-Origin: *
+x-srv-trace: v=1;t=356340dea68c7096
+x-srv-span: v=1;s=a6e370e2a2a4e60d
+X-RateLimit-Limit: 300
+X-RateLimit-Remaining: 299
+X-RateLimit-Reset: 1704711227
+ETag: W/"9c-hvyEKioJHb693Pce0IvuJTTwSX0"
+Vary: Accept-Encoding
+
+{
+    "collection": {
+        "id": "ad2da826-2e0b-48d1-9fbc-9335cedc6755",
+        "name": "Sample Collection 43 RestAssured",
+        "uid": "20382902-ad2da826-2e0b-48d1-9fbc-9335cedc6755"
+    }
+}
+Request method:	GET
+Request URI:	https://api.getpostman.com/collections/20382902-ad2da826-2e0b-48d1-9fbc-9335cedc6755
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	collectionUid=20382902-ad2da826-2e0b-48d1-9fbc-9335cedc6755
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 401 Unauthorized
+Date: Mon, 08 Jan 2024 10:52:50 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 120
+Connection: keep-alive
+x-frame-options: SAMEORIGIN
+Access-Control-Allow-Origin: *
+x-srv-trace: v=1;t=45cbdb9be87f782f
+x-srv-span: v=1;s=9e96059f42d32994
+X-RateLimit-Limit: 400
+X-RateLimit-Remaining: 399
+X-RateLimit-Reset: 1704711230
+ETag: W/"78-WpLmxRlFkKKPPDh/y4B5Gn3NuSs"
+Vary: Accept-Encoding
+
+{
+    "error": {
+        "name": "AuthenticationError",
+        "message": "Invalid API Key. Every request requires a valid API Key to be sent."
+    }
+}
+Request method:	POST
+Request URI:	https://api.getpostman.com/collections
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		X-API-Key=PMAK-6597ea77a586281abbf09b4d-820f9bb009f0ab78ee0115563e5290a8ab
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "collection": {
+        "info": {
+            "name": "Sample Collection 43 RestAssured",
+            "description": "This is just a sample collection.",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+        },
+        "item": [
+            {
+                "item": [
+                    {
+                        "request": {
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\"data\":\"123\"}"
+                            },
+                            "url": "https://postman-echo.com/post",
+                            "method": "POST",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "description": "This is a sample POST Request"
+                        },
+                        "name": "Sample POST Request"
+                    }
+                ],
+                "name": "This is a folder"
+            }
+        ]
+    }
+}
+HTTP/1.1 200 OK
+Date: Mon, 08 Jan 2024 10:53:36 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 156
+Connection: keep-alive
+x-frame-options: SAMEORIGIN
+Access-Control-Allow-Origin: *
+x-srv-trace: v=1;t=0e68a5f4b3640b6a
+x-srv-span: v=1;s=2e3a509cb04afb78
+X-RateLimit-Limit: 300
+X-RateLimit-Remaining: 298
+X-RateLimit-Reset: 1704711227
+ETag: W/"9c-r5YQOvoHQKmguGLgxAloNpCvLVk"
+Vary: Accept-Encoding
+
+{
+    "collection": {
+        "id": "007f3aa0-615a-4093-b011-b57dd35485a8",
+        "name": "Sample Collection 43 RestAssured",
+        "uid": "20382902-007f3aa0-615a-4093-b011-b57dd35485a8"
+    }
+}
+Request method:	GET
+Request URI:	https://api.getpostman.com/collections/20382902-007f3aa0-615a-4093-b011-b57dd35485a8
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	collectionUid=20382902-007f3aa0-615a-4093-b011-b57dd35485a8
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 401 Unauthorized
+Date: Mon, 08 Jan 2024 10:53:53 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 120
+Connection: keep-alive
+x-frame-options: SAMEORIGIN
+Access-Control-Allow-Origin: *
+x-srv-trace: v=1;t=8271f6cfb134a590
+x-srv-span: v=1;s=3da835b6d6b9680f
+X-RateLimit-Limit: 400
+X-RateLimit-Remaining: 399
+X-RateLimit-Reset: 1704711293
+ETag: W/"78-WpLmxRlFkKKPPDh/y4B5Gn3NuSs"
+Vary: Accept-Encoding
+
+{
+    "error": {
+        "name": "AuthenticationError",
+        "message": "Invalid API Key. Every request requires a valid API Key to be sent."
+    }
+}
+Request method:	POST
+Request URI:	https://api.getpostman.com/collections
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		X-API-Key=PMAK-6597ea77a586281abbf09b4d-820f9bb009f0ab78ee0115563e5290a8ab
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "collection": {
+        "info": {
+            "name": "Sample Collection 43 RestAssured",
+            "description": "This is just a sample collection.",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+        },
+        "item": [
+            {
+                "item": [
+                    {
+                        "request": {
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\"data\":\"123\"}"
+                            },
+                            "url": "https://postman-echo.com/post",
+                            "method": "POST",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "description": "This is a sample POST Request"
+                        },
+                        "name": "Sample POST Request"
+                    }
+                ],
+                "name": "This is a folder"
+            }
+        ]
+    }
+}
+HTTP/1.1 200 OK
+Date: Mon, 08 Jan 2024 10:55:49 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 156
+Connection: keep-alive
+x-frame-options: SAMEORIGIN
+Access-Control-Allow-Origin: *
+x-srv-trace: v=1;t=17f38f2ed57d8019
+x-srv-span: v=1;s=69cdf8e00b25e315
+X-RateLimit-Limit: 300
+X-RateLimit-Remaining: 299
+X-RateLimit-Reset: 1704711408
+ETag: W/"9c-Bu8L5FFiuygkQgNfi9PKmt29a4g"
+Vary: Accept-Encoding
+
+{
+    "collection": {
+        "id": "ee54d3c4-ffbc-4e60-9e0d-b33253bb8c74",
+        "name": "Sample Collection 43 RestAssured",
+        "uid": "20382902-ee54d3c4-ffbc-4e60-9e0d-b33253bb8c74"
+    }
+}
+Request method:	GET
+Request URI:	https://api.getpostman.com/collections/20382902-ee54d3c4-ffbc-4e60-9e0d-b33253bb8c74
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	collectionUid=20382902-ee54d3c4-ffbc-4e60-9e0d-b33253bb8c74
+Headers:		X-API-Key=PMAK-6597ea77a586281abbf09b4d-820f9bb009f0ab78ee0115563e5290a8ab
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 OK
+Date: Mon, 08 Jan 2024 10:55:52 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 991
+Connection: keep-alive
+x-frame-options: SAMEORIGIN
+Access-Control-Allow-Origin: *
+x-srv-trace: v=1;t=d50c43a063be10fe
+x-srv-span: v=1;s=a0234fc5af8267a0
+X-RateLimit-Limit: 300
+X-RateLimit-Remaining: 298
+X-RateLimit-Reset: 1704711408
+Last-Modified: 2024-01-08T10:55:48.000Z
+ETag: W/"3df-1hnLBlXUJ/dTn85KayX/4pB532Y"
+Vary: Accept-Encoding
+
+{
+    "collection": {
+        "info": {
+            "_postman_id": "ee54d3c4-ffbc-4e60-9e0d-b33253bb8c74",
+            "name": "Sample Collection 43 RestAssured",
+            "description": "This is just a sample collection.",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+            "updatedAt": "2024-01-08T10:55:48.000Z",
+            "uid": "20382902-ee54d3c4-ffbc-4e60-9e0d-b33253bb8c74",
+            "createdAt": "2024-01-08T10:55:48.000Z",
+            "lastUpdatedBy": "20382902"
+        },
+        "item": [
+            {
+                "name": "This is a folder",
+                "item": [
+                    {
+                        "name": "Sample POST Request",
+                        "id": "ff4d7f77-3528-4061-b6f3-214eb8b63d90",
+                        "request": {
+                            "method": "POST",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\"data\":\"123\"}"
+                            },
+                            "url": {
+                                "raw": "https://postman-echo.com/post",
+                                "protocol": "https",
+                                "host": [
+                                    "postman-echo",
+                                    "com"
+                                ],
+                                "path": [
+                                    "post"
+                                ]
+                            },
+                            "description": "This is a sample POST Request"
+                        },
+                        "response": [
+                            
+                        ],
+                        "uid": "20382902-ff4d7f77-3528-4061-b6f3-214eb8b63d90"
+                    }
+                ],
+                "id": "6de5470c-c91d-472f-b853-a12090a45685",
+                "uid": "20382902-6de5470c-c91d-472f-b853-a12090a45685"
+            }
+        ]
+    }
+}
+Request method:	POST
+Request URI:	https://api.getpostman.com/collections
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		X-API-Key=PMAK-6597ea77a586281abbf09b4d-820f9bb009f0ab78ee0115563e5290a8ab
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "collection": {
+        "info": {
+            "name": "Sample Collection 54 RestAssured",
+            "description": "This is just a sample collection.",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+        },
+        "item": [
+            {
+                "item": [
+                    {
+                        "request": {
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\"data\":\"123\"}"
+                            },
+                            "url": "https://postman-echo.com/post",
+                            "method": "POST",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "description": "This is a sample POST Request"
+                        },
+                        "name": "Sample POST Request"
+                    }
+                ],
+                "name": "This is a folder"
+            }
+        ]
+    }
+}
+HTTP/1.1 200 OK
+Date: Mon, 08 Jan 2024 11:15:40 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 156
+Connection: keep-alive
+x-frame-options: SAMEORIGIN
+Access-Control-Allow-Origin: *
+x-srv-trace: v=1;t=52590a39efb3da8c
+x-srv-span: v=1;s=3eaedc2f9fe19741
+X-RateLimit-Limit: 300
+X-RateLimit-Remaining: 299
+X-RateLimit-Reset: 1704712598
+ETag: W/"9c-LsZO6TiO2Opj89HbEd7yhqRWPYY"
+Vary: Accept-Encoding
+
+{
+    "collection": {
+        "id": "86513192-26bf-434f-a374-e3ffed75650d",
+        "name": "Sample Collection 54 RestAssured",
+        "uid": "20382902-86513192-26bf-434f-a374-e3ffed75650d"
+    }
+}
+Request method:	GET
+Request URI:	https://api.getpostman.com/collections/20382902-86513192-26bf-434f-a374-e3ffed75650d
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	collectionUid=20382902-86513192-26bf-434f-a374-e3ffed75650d
+Headers:		X-API-Key=PMAK-6597ea77a586281abbf09b4d-820f9bb009f0ab78ee0115563e5290a8ab
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 OK
+Date: Mon, 08 Jan 2024 11:15:42 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 991
+Connection: keep-alive
+x-frame-options: SAMEORIGIN
+Access-Control-Allow-Origin: *
+x-srv-trace: v=1;t=b767c9256e8c79cb
+x-srv-span: v=1;s=c0ba821598315f78
+X-RateLimit-Limit: 300
+X-RateLimit-Remaining: 298
+X-RateLimit-Reset: 1704712598
+Last-Modified: 2024-01-08T11:15:39.000Z
+ETag: W/"3df-Axcqy+XItMjaLwZyJvTb+kTUrWo"
+Vary: Accept-Encoding
+
+{
+    "collection": {
+        "info": {
+            "_postman_id": "86513192-26bf-434f-a374-e3ffed75650d",
+            "name": "Sample Collection 54 RestAssured",
+            "description": "This is just a sample collection.",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+            "updatedAt": "2024-01-08T11:15:39.000Z",
+            "uid": "20382902-86513192-26bf-434f-a374-e3ffed75650d",
+            "createdAt": "2024-01-08T11:15:39.000Z",
+            "lastUpdatedBy": "20382902"
+        },
+        "item": [
+            {
+                "name": "This is a folder",
+                "item": [
+                    {
+                        "name": "Sample POST Request",
+                        "id": "62449d8b-47c5-48f4-ba82-52b453f4753b",
+                        "request": {
+                            "method": "POST",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\"data\":\"123\"}"
+                            },
+                            "url": {
+                                "raw": "https://postman-echo.com/post",
+                                "protocol": "https",
+                                "host": [
+                                    "postman-echo",
+                                    "com"
+                                ],
+                                "path": [
+                                    "post"
+                                ]
+                            },
+                            "description": "This is a sample POST Request"
+                        },
+                        "response": [
+                            
+                        ],
+                        "uid": "20382902-62449d8b-47c5-48f4-ba82-52b453f4753b"
+                    }
+                ],
+                "id": "7a154fbb-6f61-4eb5-b59a-08e1ae32b7ab",
+                "uid": "20382902-7a154fbb-6f61-4eb5-b59a-08e1ae32b7ab"
+            }
+        ]
+    }
+}
+Request method:	POST
+Request URI:	https://api.getpostman.com/collections
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		X-API-Key=PMAK-6597ea77a586281abbf09b4d-820f9bb009f0ab78ee0115563e5290a8ab
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "collection": {
+        "info": {
+            "name": "Sample Collection 83 RestAssured",
+            "description": "This is just a sample collection.",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+        },
+        "item": [
+            {
+                "item": [
+                    {
+                        "request": {
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\"data\":\"123\"}"
+                            },
+                            "url": "https://postman-echo.com/post",
+                            "method": "POST",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "description": "This is a sample POST Request"
+                        },
+                        "name": "Sample POST Request"
+                    }
+                ],
+                "name": "This is a folder"
+            }
+        ]
+    }
+}
+HTTP/1.1 200 OK
+Date: Mon, 08 Jan 2024 11:16:49 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 156
+Connection: keep-alive
+x-frame-options: SAMEORIGIN
+Access-Control-Allow-Origin: *
+x-srv-trace: v=1;t=1604eb73d39d85b3
+x-srv-span: v=1;s=aa47a1657cbe7837
+X-RateLimit-Limit: 300
+X-RateLimit-Remaining: 299
+X-RateLimit-Reset: 1704712668
+ETag: W/"9c-0VgtMZgubbKd3pdUZgEiEILYvcE"
+Vary: Accept-Encoding
+
+{
+    "collection": {
+        "id": "971b2494-7084-4e8a-8940-70fef28a7e19",
+        "name": "Sample Collection 83 RestAssured",
+        "uid": "20382902-971b2494-7084-4e8a-8940-70fef28a7e19"
+    }
+}
+Request method:	GET
+Request URI:	https://api.getpostman.com/collections/20382902-971b2494-7084-4e8a-8940-70fef28a7e19
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	collectionUid=20382902-971b2494-7084-4e8a-8940-70fef28a7e19
+Headers:		X-API-Key=PMAK-6597ea77a586281abbf09b4d-820f9bb009f0ab78ee0115563e5290a8ab
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 OK
+Date: Mon, 08 Jan 2024 11:16:52 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 991
+Connection: keep-alive
+x-frame-options: SAMEORIGIN
+Access-Control-Allow-Origin: *
+x-srv-trace: v=1;t=9fa6578768789cdc
+x-srv-span: v=1;s=3454b92b72f2222c
+X-RateLimit-Limit: 300
+X-RateLimit-Remaining: 298
+X-RateLimit-Reset: 1704712668
+Last-Modified: 2024-01-08T11:16:48.000Z
+ETag: W/"3df-5u75dswJr9tcDIw80icKEQkbGEc"
+Vary: Accept-Encoding
+
+{
+    "collection": {
+        "info": {
+            "_postman_id": "971b2494-7084-4e8a-8940-70fef28a7e19",
+            "name": "Sample Collection 83 RestAssured",
+            "description": "This is just a sample collection.",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+            "updatedAt": "2024-01-08T11:16:48.000Z",
+            "uid": "20382902-971b2494-7084-4e8a-8940-70fef28a7e19",
+            "createdAt": "2024-01-08T11:16:48.000Z",
+            "lastUpdatedBy": "20382902"
+        },
+        "item": [
+            {
+                "name": "This is a folder",
+                "item": [
+                    {
+                        "name": "Sample POST Request",
+                        "id": "d4f61d2d-f4eb-4bb7-8dac-857a755165ee",
+                        "request": {
+                            "method": "POST",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\"data\":\"123\"}"
+                            },
+                            "url": {
+                                "raw": "https://postman-echo.com/post",
+                                "protocol": "https",
+                                "host": [
+                                    "postman-echo",
+                                    "com"
+                                ],
+                                "path": [
+                                    "post"
+                                ]
+                            },
+                            "description": "This is a sample POST Request"
+                        },
+                        "response": [
+                            
+                        ],
+                        "uid": "20382902-d4f61d2d-f4eb-4bb7-8dac-857a755165ee"
+                    }
+                ],
+                "id": "89ad86ff-19a9-4ae0-b912-fc5d13db04d3",
+                "uid": "20382902-89ad86ff-19a9-4ae0-b912-fc5d13db04d3"
+            }
+        ]
+    }
+}
+Request method:	POST
+Request URI:	https://api.getpostman.com/collections
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		X-API-Key=PMAK-6597ea77a586281abbf09b4d-820f9bb009f0ab78ee0115563e5290a8ab
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "collection": {
+        "info": {
+            "name": "Sample Collection 83 RestAssured",
+            "description": "This is just a sample collection.",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+        },
+        "item": [
+            {
+                "item": [
+                    {
+                        "request": {
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\"data\":\"123\"}"
+                            },
+                            "url": "https://postman-echo.com/post",
+                            "method": "POST",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "description": "This is a sample POST Request"
+                        },
+                        "name": "Sample POST Request"
+                    }
+                ],
+                "name": "This is a folder"
+            }
+        ]
+    }
+}
+HTTP/1.1 200 OK
+Date: Mon, 08 Jan 2024 11:36:38 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 156
+Connection: keep-alive
+x-frame-options: SAMEORIGIN
+Access-Control-Allow-Origin: *
+x-srv-trace: v=1;t=1057f479283cfec1
+x-srv-span: v=1;s=5902173ec4000434
+X-RateLimit-Limit: 300
+X-RateLimit-Remaining: 299
+X-RateLimit-Reset: 1704713857
+ETag: W/"9c-EN0PC08pFwEQ3RxTERHyJUvrins"
+Vary: Accept-Encoding
+
+{
+    "collection": {
+        "id": "76830f09-9c33-4b1b-ad66-931619a0b3fa",
+        "name": "Sample Collection 83 RestAssured",
+        "uid": "20382902-76830f09-9c33-4b1b-ad66-931619a0b3fa"
+    }
+}
+Request method:	GET
+Request URI:	https://api.getpostman.com/collections/20382902-76830f09-9c33-4b1b-ad66-931619a0b3fa
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	collectionUid=20382902-76830f09-9c33-4b1b-ad66-931619a0b3fa
+Headers:		X-API-Key=PMAK-6597ea77a586281abbf09b4d-820f9bb009f0ab78ee0115563e5290a8ab
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 OK
+Date: Mon, 08 Jan 2024 11:36:40 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 991
+Connection: keep-alive
+x-frame-options: SAMEORIGIN
+Access-Control-Allow-Origin: *
+x-srv-trace: v=1;t=289fe86630f048ce
+x-srv-span: v=1;s=16180224d6643e37
+X-RateLimit-Limit: 300
+X-RateLimit-Remaining: 298
+X-RateLimit-Reset: 1704713857
+Last-Modified: 2024-01-08T11:36:38.000Z
+ETag: W/"3df-AsDFqodWQ2/dGTHs+bFr9/UiwPk"
+Vary: Accept-Encoding
+
+{
+    "collection": {
+        "info": {
+            "_postman_id": "76830f09-9c33-4b1b-ad66-931619a0b3fa",
+            "name": "Sample Collection 83 RestAssured",
+            "description": "This is just a sample collection.",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+            "updatedAt": "2024-01-08T11:36:38.000Z",
+            "uid": "20382902-76830f09-9c33-4b1b-ad66-931619a0b3fa",
+            "createdAt": "2024-01-08T11:36:38.000Z",
+            "lastUpdatedBy": "20382902"
+        },
+        "item": [
+            {
+                "name": "This is a folder",
+                "item": [
+                    {
+                        "name": "Sample POST Request",
+                        "id": "a1d977d1-d3c5-46e2-aeb1-9777280c7bc2",
+                        "request": {
+                            "method": "POST",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\"data\":\"123\"}"
+                            },
+                            "url": {
+                                "raw": "https://postman-echo.com/post",
+                                "protocol": "https",
+                                "host": [
+                                    "postman-echo",
+                                    "com"
+                                ],
+                                "path": [
+                                    "post"
+                                ]
+                            },
+                            "description": "This is a sample POST Request"
+                        },
+                        "response": [
+                            
+                        ],
+                        "uid": "20382902-a1d977d1-d3c5-46e2-aeb1-9777280c7bc2"
+                    }
+                ],
+                "id": "46236fee-9c8e-42b3-8198-e885a3bb791e",
+                "uid": "20382902-46236fee-9c8e-42b3-8198-e885a3bb791e"
+            }
+        ]
+    }
+}
+Request method:	POST
+Request URI:	https://api.getpostman.com/collections
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		X-API-Key=PMAK-6597ea77a586281abbf09b4d-820f9bb009f0ab78ee0115563e5290a8ab
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "collection": {
+        "info": {
+            "name": "Sample Collection 83 RestAssured",
+            "description": "This is just a sample collection.",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+        },
+        "item": [
+            {
+                "item": [
+                    {
+                        "request": {
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\"data\":\"123\"}"
+                            },
+                            "url": "https://postman-echo.com/post",
+                            "method": "POST",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "description": "This is a sample POST Request"
+                        },
+                        "name": "Sample POST Request"
+                    }
+                ],
+                "name": "This is a folder"
+            }
+        ]
+    }
+}
+HTTP/1.1 200 OK
+Date: Mon, 08 Jan 2024 11:38:00 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 156
+Connection: keep-alive
+x-frame-options: SAMEORIGIN
+Access-Control-Allow-Origin: *
+x-srv-trace: v=1;t=a8b0654aee6aed1c
+x-srv-span: v=1;s=c145a477b0d47365
+X-RateLimit-Limit: 300
+X-RateLimit-Remaining: 299
+X-RateLimit-Reset: 1704713939
+ETag: W/"9c-1sZNVEKYBurWjXuzklWGznidjnM"
+Vary: Accept-Encoding
+
+{
+    "collection": {
+        "id": "cdf8e12f-11f0-40c6-8b09-16b4034b3950",
+        "name": "Sample Collection 83 RestAssured",
+        "uid": "20382902-cdf8e12f-11f0-40c6-8b09-16b4034b3950"
+    }
+}
+Request method:	GET
+Request URI:	https://api.getpostman.com/collections/20382902-cdf8e12f-11f0-40c6-8b09-16b4034b3950
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	collectionUid=20382902-cdf8e12f-11f0-40c6-8b09-16b4034b3950
+Headers:		X-API-Key=PMAK-6597ea77a586281abbf09b4d-820f9bb009f0ab78ee0115563e5290a8ab
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 OK
+Date: Mon, 08 Jan 2024 11:38:02 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 991
+Connection: keep-alive
+x-frame-options: SAMEORIGIN
+Access-Control-Allow-Origin: *
+x-srv-trace: v=1;t=b547db29b8d50fda
+x-srv-span: v=1;s=a094bcafd3f50db1
+X-RateLimit-Limit: 300
+X-RateLimit-Remaining: 298
+X-RateLimit-Reset: 1704713939
+Last-Modified: 2024-01-08T11:38:00.000Z
+ETag: W/"3df-2PjBJEtwchSzx4drdfdbwdFi93Q"
+Vary: Accept-Encoding
+
+{
+    "collection": {
+        "info": {
+            "_postman_id": "cdf8e12f-11f0-40c6-8b09-16b4034b3950",
+            "name": "Sample Collection 83 RestAssured",
+            "description": "This is just a sample collection.",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+            "updatedAt": "2024-01-08T11:38:00.000Z",
+            "uid": "20382902-cdf8e12f-11f0-40c6-8b09-16b4034b3950",
+            "createdAt": "2024-01-08T11:38:00.000Z",
+            "lastUpdatedBy": "20382902"
+        },
+        "item": [
+            {
+                "name": "This is a folder",
+                "item": [
+                    {
+                        "name": "Sample POST Request",
+                        "id": "73645f84-8990-41b0-8c04-c13255c059e6",
+                        "request": {
+                            "method": "POST",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\"data\":\"123\"}"
+                            },
+                            "url": {
+                                "raw": "https://postman-echo.com/post",
+                                "protocol": "https",
+                                "host": [
+                                    "postman-echo",
+                                    "com"
+                                ],
+                                "path": [
+                                    "post"
+                                ]
+                            },
+                            "description": "This is a sample POST Request"
+                        },
+                        "response": [
+                            
+                        ],
+                        "uid": "20382902-73645f84-8990-41b0-8c04-c13255c059e6"
+                    }
+                ],
+                "id": "0edeb027-ff7d-46ec-8c68-985487a51f0d",
+                "uid": "20382902-0edeb027-ff7d-46ec-8c68-985487a51f0d"
+            }
+        ]
+    }
+}
+Request method:	POST
+Request URI:	https://api.getpostman.com/collections
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		X-API-Key=PMAK-6597ea77a586281abbf09b4d-820f9bb009f0ab78ee0115563e5290a8ab
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "collection": {
+        "info": {
+            "name": "Sample Collection 83 RestAssured",
+            "description": "This is just a sample collection.",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+        },
+        "item": [
+            {
+                "item": [
+                    {
+                        "request": {
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\"data\":\"123\"}"
+                            },
+                            "url": "https://postman-echo.com/post",
+                            "method": "POST",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "description": "This is a sample POST Request"
+                        },
+                        "name": "Sample POST Request"
+                    }
+                ],
+                "name": "This is a folder"
+            }
+        ]
+    }
+}
+HTTP/1.1 200 OK
+Date: Mon, 08 Jan 2024 11:38:43 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 156
+Connection: keep-alive
+x-frame-options: SAMEORIGIN
+Access-Control-Allow-Origin: *
+x-srv-trace: v=1;t=70b95a2dd84b28f3
+x-srv-span: v=1;s=16b6e8688390201c
+X-RateLimit-Limit: 300
+X-RateLimit-Remaining: 297
+X-RateLimit-Reset: 1704713939
+ETag: W/"9c-euCpQ2tfuqe3Qn7o8wlucq6GJrw"
+Vary: Accept-Encoding
+
+{
+    "collection": {
+        "id": "43967666-afb2-4af9-a57d-1092324f667c",
+        "name": "Sample Collection 83 RestAssured",
+        "uid": "20382902-43967666-afb2-4af9-a57d-1092324f667c"
+    }
+}
+Request method:	GET
+Request URI:	https://api.getpostman.com/collections/20382902-43967666-afb2-4af9-a57d-1092324f667c
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	collectionUid=20382902-43967666-afb2-4af9-a57d-1092324f667c
+Headers:		X-API-Key=PMAK-6597ea77a586281abbf09b4d-820f9bb009f0ab78ee0115563e5290a8ab
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 OK
+Date: Mon, 08 Jan 2024 11:38:45 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 991
+Connection: keep-alive
+x-frame-options: SAMEORIGIN
+Access-Control-Allow-Origin: *
+x-srv-trace: v=1;t=79a844b8a7e4f8f9
+x-srv-span: v=1;s=dcd3fcf93ae4d3d8
+X-RateLimit-Limit: 300
+X-RateLimit-Remaining: 296
+X-RateLimit-Reset: 1704713939
+Last-Modified: 2024-01-08T11:38:42.000Z
+ETag: W/"3df-N4Zxedd9ibqdXlP1voWf5qwQwz0"
+Vary: Accept-Encoding
+
+{
+    "collection": {
+        "info": {
+            "_postman_id": "43967666-afb2-4af9-a57d-1092324f667c",
+            "name": "Sample Collection 83 RestAssured",
+            "description": "This is just a sample collection.",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+            "updatedAt": "2024-01-08T11:38:42.000Z",
+            "uid": "20382902-43967666-afb2-4af9-a57d-1092324f667c",
+            "createdAt": "2024-01-08T11:38:42.000Z",
+            "lastUpdatedBy": "20382902"
+        },
+        "item": [
+            {
+                "name": "This is a folder",
+                "item": [
+                    {
+                        "name": "Sample POST Request",
+                        "id": "76d15ce2-7090-4e54-b1b6-6b455f374110",
+                        "request": {
+                            "method": "POST",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\"data\":\"123\"}"
+                            },
+                            "url": {
+                                "raw": "https://postman-echo.com/post",
+                                "protocol": "https",
+                                "host": [
+                                    "postman-echo",
+                                    "com"
+                                ],
+                                "path": [
+                                    "post"
+                                ]
+                            },
+                            "description": "This is a sample POST Request"
+                        },
+                        "response": [
+                            
+                        ],
+                        "uid": "20382902-76d15ce2-7090-4e54-b1b6-6b455f374110"
+                    }
+                ],
+                "id": "fa840e14-e49b-4215-a6bf-83238bcbd32a",
+                "uid": "20382902-fa840e14-e49b-4215-a6bf-83238bcbd32a"
+            }
+        ]
+    }
+}
+Request method:	POST
+Request URI:	https://api.getpostman.com/collections
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		X-API-Key=PMAK-6597ea77a586281abbf09b4d-820f9bb009f0ab78ee0115563e5290a8ab
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "collection": {
+        "info": {
+            "name": "Sample Collection 83 RestAssured",
+            "description": "This is just a sample collection.",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+        },
+        "item": [
+            {
+                "item": [
+                    {
+                        "request": {
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\"data\":\"123\"}"
+                            },
+                            "url": "https://postman-echo.com/post",
+                            "method": "POST",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "description": "This is a sample POST Request"
+                        },
+                        "name": "Sample POST Request"
+                    }
+                ],
+                "name": "This is a folder"
+            }
+        ]
+    }
+}
+HTTP/1.1 200 OK
+Date: Mon, 08 Jan 2024 12:19:43 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 156
+Connection: keep-alive
+x-frame-options: SAMEORIGIN
+Access-Control-Allow-Origin: *
+x-srv-trace: v=1;t=d52be5748349c581
+x-srv-span: v=1;s=30f63a1f3d6a6012
+X-RateLimit-Limit: 300
+X-RateLimit-Remaining: 299
+X-RateLimit-Reset: 1704716443
+ETag: W/"9c-kiZZ/iJRD51U/G7AwtyFE9JxKLs"
+Vary: Accept-Encoding
+
+{
+    "collection": {
+        "id": "51b26738-893a-422f-afed-94d5d83cd433",
+        "name": "Sample Collection 83 RestAssured",
+        "uid": "20382902-51b26738-893a-422f-afed-94d5d83cd433"
+    }
+}
+Request method:	GET
+Request URI:	https://api.getpostman.com/collections/20382902-51b26738-893a-422f-afed-94d5d83cd433
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	collectionUid=20382902-51b26738-893a-422f-afed-94d5d83cd433
+Headers:		X-API-Key=PMAK-6597ea77a586281abbf09b4d-820f9bb009f0ab78ee0115563e5290a8ab
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 OK
+Date: Mon, 08 Jan 2024 12:19:46 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 991
+Connection: keep-alive
+x-frame-options: SAMEORIGIN
+Access-Control-Allow-Origin: *
+x-srv-trace: v=1;t=4709dfd8ebc3664d
+x-srv-span: v=1;s=b4eba2ead415e281
+X-RateLimit-Limit: 300
+X-RateLimit-Remaining: 298
+X-RateLimit-Reset: 1704716443
+Last-Modified: 2024-01-08T12:19:43.000Z
+ETag: W/"3df-RsmUfbRpVUe12LUVeppZGZHnask"
+Vary: Accept-Encoding
+
+{
+    "collection": {
+        "info": {
+            "_postman_id": "51b26738-893a-422f-afed-94d5d83cd433",
+            "name": "Sample Collection 83 RestAssured",
+            "description": "This is just a sample collection.",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+            "updatedAt": "2024-01-08T12:19:43.000Z",
+            "uid": "20382902-51b26738-893a-422f-afed-94d5d83cd433",
+            "createdAt": "2024-01-08T12:19:43.000Z",
+            "lastUpdatedBy": "20382902"
+        },
+        "item": [
+            {
+                "name": "This is a folder",
+                "item": [
+                    {
+                        "name": "Sample POST Request",
+                        "id": "e223494c-aa89-4328-9f3d-e9eb09870b5a",
+                        "request": {
+                            "method": "POST",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\"data\":\"123\"}"
+                            },
+                            "url": {
+                                "raw": "https://postman-echo.com/post",
+                                "protocol": "https",
+                                "host": [
+                                    "postman-echo",
+                                    "com"
+                                ],
+                                "path": [
+                                    "post"
+                                ]
+                            },
+                            "description": "This is a sample POST Request"
+                        },
+                        "response": [
+                            
+                        ],
+                        "uid": "20382902-e223494c-aa89-4328-9f3d-e9eb09870b5a"
+                    }
+                ],
+                "id": "dd3c6215-a3aa-4911-8b4b-bfe11c85cb5c",
+                "uid": "20382902-dd3c6215-a3aa-4911-8b4b-bfe11c85cb5c"
+            }
+        ]
+    }
+}

@@ -37,7 +37,7 @@
     "BaseUri": "https://simple-grocery-store-api.glitch.me",
     "Test Name": "testAddItemsToCart",
     "Test Description": "To check whether the user is able to add an item to the cart",
-    "Execute": "yes",
+    "Execute": "no",
     "Cart Id": "Y3OIBjFQ9G3WuAMNOdfWm",
     "Cart Item": 2177,
     "Expected Status Code": "201",
@@ -141,6 +141,15 @@
     "Test Description": "To check the Form URL encoding",
     "Encoding": "FORM_URL_ENCODED",
     "Execute": "no",
+    "Expected Status Code": "200"
+  },
+  {
+    "Note": "This test case is for learning purpose only, not a part of GROCERY SHOP APPLICATION TEST CASES",
+    "BaseUri": "https://api.getpostman.com",
+    "Test Name": "testCreateNewCollection",
+    "Test Description": "To post a complex POJO",
+    "Encoding": "JSON",
+    "Execute": "yes",
     "Expected Status Code": "200"
   }
 ]

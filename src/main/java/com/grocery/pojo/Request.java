@@ -13,7 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 public class Request {
     Body body;
-    private String url;
+    private Object url;
     private String method;
     private List<Header> header;
     private String description;
