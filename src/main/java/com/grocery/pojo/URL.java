@@ -6,11 +6,16 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class CollectionRoot {
-    Collection collection;
+@AllArgsConstructor
+public class URL {
+    private String raw;
+    private String protocol;
+    private List<String> host;
+    private List<String> path;
 }

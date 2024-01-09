@@ -11,7 +11,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class RequestRoot {
-    private RequestBase request;
-    private String name;
+public class CollectionRootResponse extends CollectionRootBase {
+    CollectionResponse collection;
 }
+

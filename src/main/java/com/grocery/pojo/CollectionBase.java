@@ -6,12 +6,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class RequestRoot {
-    private RequestBase request;
-    private String name;
+public abstract class CollectionBase {
+    Info info;
 }

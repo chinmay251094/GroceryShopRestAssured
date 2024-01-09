@@ -1,20 +1,16 @@
 package com.grocery.pojo;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.List;
-
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Request {
-    Body body;
-    private Object url;
-    private String method;
-    private List<Header> header;
-    private String description;
+@JsonIgnoreProperties(ignoreUnknown = true)
+public abstract class RequestRootBase {
+    private String name;
 }

@@ -28,6 +28,7 @@ import java.util.Map;
 import static com.grocery.reports.GroceryShopReportLogger.logResponse;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.hamcrest.Matchers.equalTo;
 
 public class MiscellaneousTests extends BaseTest {
@@ -72,31 +73,31 @@ public class MiscellaneousTests extends BaseTest {
     @GroceryShopTeam(author = Tester.CHINMAY, category = TestCategory.SANITY)
     void testCreateNewCollection(Map<String, String> map) {
         String apiKey = KeyUtils.getKey();
-        
+
         Header header = new Header("Content-Type", "application/json");
         List<Header> headerList = new ArrayList<>();
         headerList.add(header);
 
         Body body = new Body("raw", "{\"data\":\"123\"}");
 
-        Request request = new Request(body, "https://postman-echo.com/post", "POST",
-                headerList, "This is a sample POST Request");
+        RequestRequest request = new RequestRequest(body, "POST", headerList
+                , "This is a sample POST Request", "https://postman-echo.com/post");
 
-        RequestRoot requestRoot = new RequestRoot(request, "Sample POST Request");
-        List<RequestRoot> requestRoots = new ArrayList<>();
+        RequestRootRequest requestRoot = new RequestRootRequest("Sample POST Request", request);
+        List<RequestRootRequest> requestRoots = new ArrayList<>();
         requestRoots.add(requestRoot);
 
-        Folder folder = new Folder(requestRoots, "This is a folder");
-        List<Folder> folderList = new ArrayList<>();
+        FolderRequest folder = new FolderRequest("This is a folder", requestRoots);
+        List<FolderRequest> folderList = new ArrayList<>();
         folderList.add(folder);
 
         Info info = new Info("Sample Collection 83 RestAssured",
                 "This is just a sample collection.",
-                "https://schema.getpostman.com/json/collection/v2.1.0/collection.json");
+                "https://schema.getpostman.com/json/coll ection/v2.1.0/collection.json");
 
-        Collection collection = new Collection(info, folderList);
+        CollectionRequest collection = new CollectionRequest(info, folderList);
 
-        CollectionRoot collectionRoot = new CollectionRoot(collection);
+        CollectionRootRequest collectionRoot = new CollectionRootRequest(collection);
 
         RequestSpecification requestSpecification = given().header("X-API-Key", apiKey)
                 .body(collectionRoot);
@@ -116,16 +117,35 @@ public class MiscellaneousTests extends BaseTest {
                 header("X-API-Key", apiKey).
                 get("/collections/{collectionUid}");
 
-        CollectionRoot deserialized = fetchCollection.then().extract().as(CollectionRoot.class);
+        CollectionRootResponse deserialized = fetchCollection.then().extract().as(CollectionRootResponse.class);
 
         ObjectMapper objectMapper = new ObjectMapper();
-        String collectionRootStr = objectMapper.writeValueAsString(collectionRoot);
-        String deserializedStr = objectMapper.writeValueAsString(deserialized);
+        String collectionRootStr = objectMapper.writeValueAsString(collectionRoot).replaceAll("\\s", "");
+        String deserializedStr = objectMapper.writeValueAsString(deserialized).replaceAll("\\s", "");
 
         JSONAssert.assertEquals(collectionRootStr, deserializedStr,
                 new CustomComparator(JSONCompareMode.STRICT,
                         new Customization("collection.item[*].item[*].request.url", (o1, o2) -> true)));
 
+        List<String> urlRequestList = new ArrayList<>();
+        List<String> urlResponseList = new ArrayList<>();
+
+        for (RequestRootRequest list : requestRoots) {
+            System.out.println("list.getRequest().getUrl() = " + list.getRequest().getUrl());
+            urlRequestList.add(list.getRequest().getUrl());
+        }
+
+        List<FolderResponse> folderResponses = deserialized.getCollection().getItem();
+        for (FolderResponse folderResponse : folderResponses) {
+            List<RequestRootResponse> rootResponses = folderResponse.getItem();
+            for (RequestRootResponse requestRootResponse : rootResponses) {
+                URL url = requestRootResponse.getRequest().getUrl();
+                System.out.println("url.getRaw() = " + url.getRaw());
+                urlResponseList.add(url.getRaw());
+            }
+        }
+
+        assertThat(urlResponseList, containsInAnyOrder(urlRequestList.toArray()));
         logResponse(fetchCollection);
     }
 }

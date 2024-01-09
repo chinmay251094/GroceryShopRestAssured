@@ -1,17 +1,19 @@
 package com.grocery.pojo;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class RequestRoot {
-    private RequestBase request;
-    private String name;
+public class RequestRootRequest extends RequestRootBase {
+    private RequestRequest request;
+
+    public RequestRootRequest(String name, RequestRequest request) {
+        super(name);
+        this.request = request;
+    }
 }
